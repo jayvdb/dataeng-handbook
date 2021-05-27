@@ -1,37 +1,11 @@
-## Welcome to GitHub Pages
+## Welcome
 
-You can use the [editor on GitHub](https://github.com/harrison-ai/dataeng-handbook/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+Welcome to the [harrison.ai](https://harrison.ai) Data Engineering Handbook.  This "book" is the canonical source of information for how the Data Engineering team operates and while being used as a source of reference for new and existing team members, it is also intended to be a platform for discussion and collaboration so we can improve the way we do things.  We strive to be both transparent and clear about how we work which is why this document has been made publicly available and is licensed under the [Mozilla Public License](https://github.com/harrison-ai/dataeng-handbook/blob/main/LICENSE).  Suggestions for improvement are welcome via a [pull request](https://github.com/harrison-ai/dataeng-handbook/pulls).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Contents
 
-### Markdown
+* [About Us](about.html)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Engineering
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/harrison-ai/dataeng-handbook/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+* [Development Processes](engineering/dev.html)
