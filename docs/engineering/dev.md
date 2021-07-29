@@ -3,23 +3,23 @@
 
 - [Engineering](#engineering)
   - [Development Processes](#development-processes)
-    - [Intro into high level team processes](#intro-team)
+    - [Data Engineering Team Intro](#intro-team)
     - [Agile Methodologies](#agile-methodologies)
       - [Initiatives, Epics, Tasks and Spikes](#initiatives-epics-tasks-and-spikes)
-      - [Story Point Definition](#story-point-definition)
       - [DE Team Ceremonies Explained](#de-team-ceremonies)
       - [Backlog Refinement/Grooming](#backlog-refinement)
       - [Story Points](#story-points)
-      - [Support](#support)
       - [Definitions of Done](#definitions-of-done)
       - [Sprint Workflow](#sprint-workflow)
+    - [How to write a Task/Story](#write-task)
+    - [Support](#support)  
     - [Git Practices](#git-practices)
       - [Branching Workflow](#branching-workflow)
       - [Commit Messages](#commit-messages)
 
 In this section of the handbook we outline our standard development processes i.e. "how" we work.  
 
-### Intro into high level team processes
+### Data Engineering Team Intro
 
 Welcome to the Data Engineering Team! This page will give you an idea at a high level of how the team operates on a day-to-day basis, weekly, and near future. We welcome any input to improve our processes, we strive to be as adaptable and flexible as possible to make the team the best we can be.
 
@@ -55,25 +55,19 @@ You will see Sprint starting to end, after the sprint end we will conduct a RETR
 
 We strive to adhere to agile methodologies as much as possible, yet are not agile purists. From the values of the [agile manifesto](https://www.atlassian.com/agile/manifesto): 
 
-> **Individuals and interactions** over processes and tools
->
-> **Working software** over comprehensive documentation
->
-> **Customer collaboration** over contract negotiation 
->
-> **Responding to change** over following a plan 
+> - **Individuals and interactions** over processes and tools
+> - **Working software** over comprehensive documentation
+> - **Customer collaboration** over contract negotiation 
+> - **Responding to change** over following a plan 
 
-we prioritise these values in the following order:
+Our team prioritise these values in the following order:
 
-> **Customer collaboration** over contract negotiation 
->
-> **Responding to change** over following a plan 
->
-> **Individuals and interactions** over processes and tools
->
-> **Working software** over comprehensive documentation
+> - **Customer collaboration** over contract negotiation 
+> - **Responding to change** over following a plan 
+> - **Individuals and interactions** over processes and tools
+> - **Working software** over comprehensive documentation
 
-as the manifesto itself states that the items on the right are not valued or important, but the items on the left are valued more.  Similarly as a team that does not mean that **working software** or documentation 
+As the manifesto itself states that the items on the right are not valued or important, but the items on the left are valued more.  Similarly as a team that does not mean that **working software** or documentation 
 are not important compared with customer collaboration, as a highly regulated medical device development company these values are mandatory. It means that we need to ensure we are collaborative, dynamic and responsive 
 in order to build high quality medical device products. 
 
@@ -91,41 +85,9 @@ When planning our work we use the agile concepts of Initiatives, Epics, Tasks an
 <tr><td style="vertical-align: middle; border: none;"><img src="./images/spike.svg" alt="spike" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Spikes</strong></td><td style="vertical-align: middle; border: none;">A piece of exploratory work, often used as a means of gathering requirements for a new set of tasks or to assist in determining a later action or path.  Spikes often have less clearly defined definitions of done, or the definition of done may be to create / inform later tasks.</td></tr>
 </table>
 
-#### Story Point Definition
-
-Story points represent the relative sizing of the user story. It is a unit of estimation used by Agile teams to estimate User Stories.
-
-When the client/stakeholder wants some features to be developed, he/she desires to know how soon the team can complete the features and how many resources it will take to complete the work. From the developer’s perspective it’s next to impossible to predict the exact time in which he/she can complete the work. The person can, however, give a rough estimate in terms of how much time it might take to complete the work. Note that instead of “will” the developer chose to use “might” because he/she is not absolutely “sure” about the time factor but “feels” it might take that much time. This is user story estimation in a nutshell.
-
-You don’t give an exact number explaining how complex the story is and how long it’ll take to develop – you give a rough “estimate”.
-
-We are good at comparing size, so estimating a story using Fibonacci series sequence (0, 1, 2, 3, 5, 8, 13, 20, 40, and 100) gives more clarity of its complexity and relative sizing in terms of development.
-
-In the below image are some examples of relative sizing and its estimation points to develop following vehicles: Difficulty could be related to complexities, risks, and efforts involved. Story points are a unit of measure for expressing an estimate of the overall effort that will be required to fully implement a product backlog item or any other piece of work.
-
-**Factors while estimating stories:**
-> - Complexity : Consider the complexity of the story.
-> - Risk : Consider the team’s inexperience with developing this story.
-> - Implementation : Consider the implementation factors.
-> - Deployment : Consider the deployment requirements.
-> - Interdependencies : Consider other outside issues.
-
-**What’s wrong with using time as a unit of measure?**
-
-Why can’t we use hours or days? Well, in a nutshell, because your hour is not the same as my hour.
-
-If you ask two developers to estimate the same task, you’ll get two different answers. While some of the difference might be explained by gaps in the specification or understanding, the fact is that developers have different knowledge and experiences so it will take more or less time to do the same work.
-
-Until we understand what the team’s velocity is, we still can’t predict when product backlog items are likely to be completed. Worse, if the membership of the team changes, the velocity will change and we won’t know what that new velocity is until some time down the road.
-
-But to try and match Story Points to hours is missing the point. *What’s important is how many Story Points a team can complete in a sprint, known as the velocity. When you know this, you can make some predictions and you know what, they’re likely to be good. Very good.*
-
-Ask those same two developers to rate the amount of effort required to complete one product backlog item relative to another product backlog item and you’re far more likely to end up with a consensus.
-
 #### DE Team Ceremonies Explained
 
 **Introduction**
-
 Scrum ceremonies are important elements of the agile software delivery process. They are *not just meetings for the sake of having meetings*. Rather, these scrum ceremonies provide the framework for teams to get work done in a structured manner, help to set expectations, empower the team to collaborate effectively, and ultimately drive results. If they’re not managed appropriately, however, they can overwhelm calendars and drown out the value they are intended to provide.
 
 These scrum ceremonies fulfill & enable several core/original principles. Often, when teams abandon certain ceremonies it’s because they don’t see the value in them anymore, which indicates they may have also abandoned the principles.
@@ -144,7 +106,7 @@ Simply put: scrum is a way to implement agile.
 
 Conducting these meetings in isolation won’t automatically make your team agile. They have to be a part of a larger, well understood and articulated process. They should facilitate conversations within the agile team to get things done.
 
-### Sprint Planning
+#### Sprint Planning
 What Is Sprint Planning Meeting?
 Sprint Planning is the scrum ceremony designed to make sure the team is prepared to get the right things done every sprint.
 
@@ -153,7 +115,7 @@ This scrum meeting happens at the beginning of a new sprint and is designed for 
 
 The Product Backlog must be ready for review before Sprint Planning begins. This means adding acceptance criteria, requirements, and necessary details for the development team to accurately estimate the level of effort. Only then can the development team accurately forecast the amount of work they can accomplish during the sprint.
 
-### Daily Standup
+#### Daily Standup
 
 **What Is the Daily Standup Meeting?**
 The Daily Standup is the team’s chance to get together, define a plan for the day’s work, and identify any blockers. This meeting enables the the team to be sync and build trust with each other. Let the team hold each other accountable for achieving their commitments on a daily basis.
@@ -170,7 +132,7 @@ During the daily scrum, each member of the Development Team should briefly answe
 
 *Each participant in this scrum meeting should be listening to each other and remain present through the entirety of the meeting. Often times, members of the Development Team will identify opportunities to work together during the day based on commentary during the Daily Scrum.*
 
-### Sprint Retrospective
+#### Sprint Retrospective
 
 **What Is Sprint Retrospective Meeting?**
 The Sprint Retro is the final scrum ceremony in the sequence that allows the team to look back on the work that was just completed and identify items that could be improved.
@@ -189,7 +151,6 @@ Ultimately, this scrum ceremony should provide a blameless space for members of 
 #### Backlog Refinement/Grooming
 
 **What is Backlog Refinement?**
-
 Backlog is defined as the full set of user stories not in the current sprint that defines the remainder of the project’s scope. Left unattended, the list of individual items on a product backlog can quickly become overwhelming to any development team.
 
 When that happens, the status of individual user stories can become unclear, the team can lose focus on important tasks and they may have trouble estimating the time and resources needed to complete items, and the project completion date can slip.
@@ -227,7 +188,6 @@ The goal here is for all attendees to leave the meeting with a clear understandi
 > - It has been placed in the backlog;
 
 **Final Thought**
-
 There’s no question that backlog grooming meetings are a critical step in improving the speed and efficiency of your agile project, greatly reducing scope creep and increasing team grasp of project deliverables. Adhering to the best practices above can ensure that you get the most of backlog grooming meetings.
 
 *The intent of backlog refinement is to ensure that the backlog remains populated with items that are relevant, detailed and estimated to a degree appropriate with their priority, and in keeping with current understanding of the project or product and its objectives.*
@@ -235,7 +195,6 @@ There’s no question that backlog grooming meetings are a critical step in impr
 #### Story Points
 
 **What is a Story Point?**
-
 Story points represent the relative sizing of the user story. It is a unit of estimation used by Agile teams to estimate User Stories.
 
 When the client/stakeholder wants some features to be developed, he/she desires to know how soon the team can complete the features and how many resources it will take to complete the work. From the developer’s perspective it’s next to impossible to predict the exact time in which he/she can complete the work. The person can, however, give a rough estimate in terms of how much time it might take to complete the work. Note that instead of “will” the developer chose to use “might” because he/she is not absolutely “sure” about the time factor but “feels” it might take that much time. This is user story estimation in a nutshell.
@@ -256,7 +215,6 @@ In the below image are some examples of relative sizing and its estimation point
 > - Interdependencies : Consider other outside issues.
 
 **What’s wrong with using time as a unit of measure?**
-
 Why can’t we use hours or days? Well, in a nutshell, because your hour is not the same as my hour.
 
 If you ask two developers to estimate the same task, you’ll get two different answers. While some of the difference might be explained by gaps in the specification or understanding, the fact is that developers have different knowledge and experiences so it will take more or less time to do the same work.
@@ -266,22 +224,6 @@ Until we understand what the team’s velocity is, we still can’t predict when
 But to try and match Story Points to hours is missing the point. *What’s important is how many Story Points a team can complete in a sprint, known as the velocity. When you know this, you can make some predictions and you know what, they’re likely to be good. Very good.*
 
 Ask those same two developers to rate the amount of effort required to complete one product backlog item relative to another product backlog item and you’re far more likely to end up with a consensus.
-
-#### Support
-
-The team is also responsible to support our joint venture partners, the support is split into two components, *Urgent Support*, and *“Normal” Ticket Support*.
-
-1. *Urgent Support* has its own dedicated MS Teams channel to get issues resolved as quickly as possible. For example, we might get a request that a machine has to be restarted that needs a quick response that cannot wait for a ticket. This channel is created under our Data Engineering Team Channel:
-
-INSERT URGENT SUPPORT SCREENSHOT
-
-2. *“Normal” Ticket Support* will go through a ticket logging process. The requester will create a Support ticket and assign it to the appropriate person. These tickets will simply be in the line of a new item such as driver upgrades etc. that should require a ticket and planning from our side. We will make time in our daily stand-up to go through these tickets because they will also form part of our sprint planning/prioritization process.
-
-INSERT TICKET SUPPORT SCREENSHOT
-
-
-
-
 
 #### Definitions of Done
 
@@ -305,13 +247,67 @@ A task or ticket can take on one of the following states:
 
 1. **To Do**: the initial state
 2. **In Progress**: being actively worked on
-3. **In Review**: completion being reviewed as per [definition of done](#definitions-of-done)
-4. **Done**: the task is complete
-5. **Blocked**: the task is awaiting some other requirement or dependency before it can be completed or ready for review
+3. **Blocked**: the task is awaiting some other requirement or dependency before it can be completed or ready for review
+4. **In Review**: completion being reviewed as per [definition of done](#definitions-of-done)
+5. **Abandoned**: the ticket is a duplicate or not relevant anymore.
+6. **Done**: the task is complete
 
-tasks logically progress from state 1 to 4 and with the exception of **To Do** and **Done** can fall back to a previous state if required.  A task can enter **Blocked** state from any state except **Done**.
+tasks logically progress from state 1 to 4 and with the exception of **To Do** and **Done** can fall back to a previous state if required.  A task can enter **Blocked** state
+from any state except **Done**.
 
 When any type of task or ticket is created a unique reference number is provided e.g. PRO-123 and is to be used when referencing the task or ticket.
+
+### How to write a Story/Task
+The basic fundamentals of a story is that stories should be:
+
+> - Independent
+> - Negotiable
+> - Valuable
+> - Estimable
+> - Small
+> - Testable
+
+*EVERY* story should have a Technical Details and Definition of Done.
+
+**[Technical Details]**
+
+User stories allow teams to have one hand on the needs, wants and values of their customers, and another, on the activities they need to accomplish to provide that value. The link pairing these two things together, is acceptance criteria. Acceptance Criteria or ‘conditions of satisfaction’, provide a detailed scope of a user’s requirements. They help the team to understand the value of the story and set expectations as to when a team should consider something done.
+
+**Technical Details Goals**
+> - to clarify what the team should build before they start work
+> - to ensure everyone has a common understanding of the problem/need of the customer
+> - to help team members know when the story is complete
+
+**Definition of Done (DoD)**
+> - DoD includes, for instance:
+> - unit/integrated testing
+> - ready for acceptance test
+> - deployed on demo server
+> - all applicable objects are in the S3 Glacier storage class
+
+Below is a screenshot of how a typical Jira ticket should look like when it is ready for estimation, without these mandatory fields surrounded by the red rectangle the team will not be able to accurately estimate the ticket:
+
+INSERT TICKET TEMPLATE PIC
+
+**Categories** - In front of the ticket summary field you will need to put into the brackets where will the main area be where this ticket belongs to. 
+
+**Technical Details** - This will give the team member the background of the ticket and any critical things he will needs to take in consideration. Some detail for example where the file location is, dependencies, etc.
+
+**Definition of Done (DoD)** - This part is the most important one of them all, the list will contain one or more items we need to satisfy before the ticket can be moved to a Review/Done status.
+
+**Labels** - Each project deliverable might contain different labels within our JerFire Board. To manage the work and track it correctly we need to label them accordingly. The team might work on two separate workstream within the JetFire board, for example it can be a cost saving project of 3 months and we also need to work on a CTC Release project. The team will decide what we call the label to correspond to the correct project work. The labels will help us get the correct visibility via a Dashboard on the scope of the piece of work for that specific project and also for tracking purposes.
+
+### Support
+
+The team is also responsible to support our joint venture partners, the support is split into two components, *Urgent Support*, and *“Normal” Ticket Support*.
+
+1. *Urgent Support* has its own dedicated MS Teams channel to get issues resolved as quickly as possible. For example, we might get a request that a machine has to be restarted that needs a quick response that cannot wait for a ticket. This channel is created under our Data Engineering Team Channel:
+
+INSERT URGENT SUPPORT SCREENSHOT
+
+2. *“Normal” Ticket Support* will go through a ticket logging process. The requester will create a Support ticket and assign it to the appropriate person. These tickets will simply be in the line of a new item such as driver upgrades etc. that should require a ticket and planning from our side. We will make time in our daily stand-up to go through these tickets because they will also form part of our sprint planning/prioritization process.
+
+INSERT TICKET SUPPORT SCREENSHOT
 
 ### Git Practices
 
