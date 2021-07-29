@@ -236,7 +236,6 @@ The following trivial example demonstrates a measurable definition of done.
 
 In this definition we can measure the output of the task i.e. calling */status* with the correct expected responses when the microservice is functioning as per requirement 1.2.3.4 and that the unit tests contain checks for the status code.  Obviously this example is so trivial that it is almost self explanatory but it demonstrates that there is no interpretation required in the definition of done. 
 
-
 #### Sprint Workflow
 
 The harrison.ai data engineering team plans and tracks the progress of project goals in 2 week (10 day) sprints, using [Jira](https://www.atlassian.com/software/jira).  Preferably when planning for an upcoming 
@@ -268,10 +267,6 @@ The basic fundamentals of a story is that stories should be:
 > - Testable
 
 *EVERY* story should have a Technical Details and Definition of Done.
-
-**[Technical Details]**
-
-User stories allow teams to have one hand on the needs, wants and values of their customers, and another, on the activities they need to accomplish to provide that value. The link pairing these two things together, is acceptance criteria. Acceptance Criteria or ‘conditions of satisfaction’, provide a detailed scope of a user’s requirements. They help the team to understand the value of the story and set expectations as to when a team should consider something done.
 
 **Technical Details Goals**
 > - to clarify what the team should build before they start work
