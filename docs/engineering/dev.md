@@ -7,6 +7,10 @@
     - [Agile Methodologies](#agile-methodologies)
       - [Initiatives, Epics, Tasks and Spikes](#initiatives-epics-tasks-and-spikes)
       - [Story Point Definition](#story-point-definition)
+      - [DE Team Ceremonies Explained](#de-team-ceremonies)
+      - [Backlog Refinement/Grooming](#backlog-refinement)
+      - [Story Points](#story-points)
+      - [Support](#support)
       - [Definitions of Done](#definitions-of-done)
       - [Sprint Workflow](#sprint-workflow)
     - [Git Practices](#git-practices)
@@ -117,6 +121,167 @@ Until we understand what the team’s velocity is, we still can’t predict when
 But to try and match Story Points to hours is missing the point. *What’s important is how many Story Points a team can complete in a sprint, known as the velocity. When you know this, you can make some predictions and you know what, they’re likely to be good. Very good.*
 
 Ask those same two developers to rate the amount of effort required to complete one product backlog item relative to another product backlog item and you’re far more likely to end up with a consensus.
+
+#### DE Team Ceremonies Explained
+
+**Introduction**
+
+Scrum ceremonies are important elements of the agile software delivery process. They are *not just meetings for the sake of having meetings*. Rather, these scrum ceremonies provide the framework for teams to get work done in a structured manner, help to set expectations, empower the team to collaborate effectively, and ultimately drive results. If they’re not managed appropriately, however, they can overwhelm calendars and drown out the value they are intended to provide.
+
+These scrum ceremonies fulfill & enable several core/original principles. Often, when teams abandon certain ceremonies it’s because they don’t see the value in them anymore, which indicates they may have also abandoned the principles.
+
+Let’s unpack some important scrum ceremonies, delving into their purpose, attendees, and tips & tricks to make them most effective. The important scrum ceremonies are:
+> - Sprint Planning
+> - Daily Standup
+> - Sprint Review
+> - Sprint Retrospective
+
+I’m not going into detail regarding the **Sprint Review** ceremony because each team might not have this infrastructure to use. This is the ceremony where all work completed during the sprint can be showcased the stakeholders. We do have some Sprint Reviews can it be conducted in a casual “Demo Friday” nature. This will differ from each team/project and it would not be a “compulsory” item after each sprint.
+
+It is important to note that these ceremonies are specific to the SCRUM framework, an agile process that teams use around the world to build things that work. Scrum is intentionally lightweight and simple, but it can be difficult to master.
+
+Simply put: scrum is a way to implement agile.
+
+Conducting these meetings in isolation won’t automatically make your team agile. They have to be a part of a larger, well understood and articulated process. They should facilitate conversations within the agile team to get things done.
+
+### Sprint Planning
+What Is Sprint Planning Meeting?
+Sprint Planning is the scrum ceremony designed to make sure the team is prepared to get the right things done every sprint.
+
+**What’s Its Purpose?**
+This scrum meeting happens at the beginning of a new sprint and is designed for the Development Team to meet and review the prioritized Product Backlog. Through a series of discussions and negotiations, the team should ultimately create a sprint backlog that contains all items they are committing to complete at the end of the sprint. This is called the sprint goal. The sprint goal should be a shippable increment of work, meaning it can be demonstrated at the end of a sprint. 
+
+The Product Backlog must be ready for review before Sprint Planning begins. This means adding acceptance criteria, requirements, and necessary details for the development team to accurately estimate the level of effort. Only then can the development team accurately forecast the amount of work they can accomplish during the sprint.
+
+### Daily Standup
+
+**What Is the Daily Standup Meeting?**
+The Daily Standup is the team’s chance to get together, define a plan for the day’s work, and identify any blockers. This meeting enables the the team to be sync and build trust with each other. Let the team hold each other accountable for achieving their commitments on a daily basis.
+
+**What’s Its Purpose?**
+This scrum ceremony provides a frequent opportunity for the team to get together and communicate individual progress toward the sprint goal. *The outcome of the daily standup should illuminate any impediments the team is having*. The team can identify who is responsible for clearing these roadblocks for the Development Team so they can focus on delivering the work identified in Sprint Planning.
+
+*The Daily Scrum is more than just a status update; it’s a pulse check that should illuminate any impediments that are slowing the team’s progress.*
+
+During the daily scrum, each member of the Development Team should briefly answer the following questions:
+> - What did you do yesterday?
+> - What will you do today?
+> - Are there any impediments in the way?
+
+*Each participant in this scrum meeting should be listening to each other and remain present through the entirety of the meeting. Often times, members of the Development Team will identify opportunities to work together during the day based on commentary during the Daily Scrum.*
+
+### Sprint Retrospective
+
+**What Is Sprint Retrospective Meeting?**
+The Sprint Retro is the final scrum ceremony in the sequence that allows the team to look back on the work that was just completed and identify items that could be improved.
+
+**What’s Its Purpose?**
+After a Sprint Review has been conducted, the team needs to have the opportunity to reflect on the work that was delivered in the latest sprint and discuss ways in which to improve. The sprint retrospective is that meeting. It gives the team a platform to discuss things that are going well, things that could go better, and some suggestions for changes. Some common questions asked are:
+
+> - What went well over the last sprint?
+> - What didn’t go so well?
+> - What could we do differently to improve?
+
+Ultimately, this scrum ceremony should provide a blameless space for members of the team to provide their honest feedback and recommendations for improvements. It should drive change. All actionable feedback should be collected and assigned so that members of the scrum team understand who is responsible for what.
+
+*We at Harrison & Annalise is all about constant improvement, and this ceremony is specifically designed to help the team better.*
+
+#### Backlog Refinement/Grooming
+
+**What is Backlog Refinement?**
+
+Backlog is defined as the full set of user stories not in the current sprint that defines the remainder of the project’s scope. Left unattended, the list of individual items on a product backlog can quickly become overwhelming to any development team.
+
+When that happens, the status of individual user stories can become unclear, the team can lose focus on important tasks and they may have trouble estimating the time and resources needed to complete items, and the project completion date can slip.
+
+Enter the product backlog grooming meeting, which is basically a meeting between the project manager and customer point of contact in which the participants break the backlog down into user stories and reprioritize them.
+
+You may also hear it referred to as a product backlog refinement meeting or story time session, but whatever the terminology, the purpose is to discuss the current backlog list and offer suggestions for improving it, which may take the form of:
+
+> - writing new user stories, a process we outline in the post, Our Approach to Developing User Stories.
+> - Refining and reprioritizing previously written user stories and breaking them down into smaller stories, if needed.
+> - removing user stories that no longer appear relevant
+> - creating new user stories in response to newly discovered needs
+> - re-assessing the relative priority of stories
+> - assigning estimates to stories which have yet to receive one
+> - correcting estimates in light of newly discovered information
+> - splitting user stories which are high priority but too coarse grained to fit in an upcoming iteration
+> - reviewing time and personnel estimates for individual backlog items, utilizing what we’ve learned from completed sprints.
+> - adding new product features, then prioritizing and estimating them.
+> - looking more extensively into the total backlog to enable long-range technical and project planning.
+
+*Take special note of the last item*: long-range technical and project planning. Many project managers limit grooming meetings to tasks related to the next sprint, but we believe that approach misses an opportunity to keep a project that’s in good shape running well in subsequent sprints. For example, the meeting can be useful in alerting product owners of possible challenges and obstacles down the road, keeping the team on track and ahead of schedule.
+
+**Plan for Success**
+
+Implementing well-managed meetings will improve the overall speed and efficiency of the sprint planning meetings that follow, helping to boost commitment and product familiarity.
+
+It’s important to clearly state expectations upfront for what needs to be accomplished during the meeting and have a set agenda. This puts everyone in the same mindset, saves valuable time and keeps the meeting flowing smoothly. Sometimes these recurring meetings can get tedious so a well-run meeting will make all the difference.
+
+The goal here is for all attendees to leave the meeting with a clear understanding of what is left for project completion and the upcoming sprint goals.
+
+**A story is ready for a sprint when:**
+> - It is completely groomed;
+> - Technical Details is included and Definition of Done is written;
+> - There are no open questions/impediments attached to it;
+> - It has been placed in the backlog;
+
+**Final Thought**
+
+There’s no question that backlog grooming meetings are a critical step in improving the speed and efficiency of your agile project, greatly reducing scope creep and increasing team grasp of project deliverables. Adhering to the best practices above can ensure that you get the most of backlog grooming meetings.
+
+*The intent of backlog refinement is to ensure that the backlog remains populated with items that are relevant, detailed and estimated to a degree appropriate with their priority, and in keeping with current understanding of the project or product and its objectives.*
+
+#### Story Points
+
+**What is a Story Point?**
+
+Story points represent the relative sizing of the user story. It is a unit of estimation used by Agile teams to estimate User Stories.
+
+When the client/stakeholder wants some features to be developed, he/she desires to know how soon the team can complete the features and how many resources it will take to complete the work. From the developer’s perspective it’s next to impossible to predict the exact time in which he/she can complete the work. The person can, however, give a rough estimate in terms of how much time it might take to complete the work. Note that instead of “will” the developer chose to use “might” because he/she is not absolutely “sure” about the time factor but “feels” it might take that much time. This is user story estimation in a nutshell.
+
+You don’t give an exact number explaining how complex the story is and how long it’ll take to develop – you give a rough “estimate”.
+
+We are good at comparing size, so estimating a story using Fibonacci series sequence (0, 1, 2, 3, 5, 8, 13, 20, 40, and 100) gives more clarity of its complexity and relative sizing in terms of development.
+
+In the below image are some examples of relative sizing and its estimation points to develop following vehicles: Difficulty could be related to complexities, risks, and efforts involved. Story points are a unit of measure for expressing an estimate of the overall effort that will be required to fully implement a product backlog item or any other piece of work.
+
+!!INSERT SP PIC!!
+
+**Factors while estimating stories:**
+> - Complexity : Consider the complexity of the story.
+> - Risk : Consider the team’s inexperience with developing this story.
+> - Implementation : Consider the implementation factors.
+> - Deployment : Consider the deployment requirements.
+> - Interdependencies : Consider other outside issues.
+
+**What’s wrong with using time as a unit of measure?**
+
+Why can’t we use hours or days? Well, in a nutshell, because your hour is not the same as my hour.
+
+If you ask two developers to estimate the same task, you’ll get two different answers. While some of the difference might be explained by gaps in the specification or understanding, the fact is that developers have different knowledge and experiences so it will take more or less time to do the same work.
+
+Until we understand what the team’s velocity is, we still can’t predict when product backlog items are likely to be completed. Worse, if the membership of the team changes, the velocity will change and we won’t know what that new velocity is until some time down the road.
+
+But to try and match Story Points to hours is missing the point. *What’s important is how many Story Points a team can complete in a sprint, known as the velocity. When you know this, you can make some predictions and you know what, they’re likely to be good. Very good.*
+
+Ask those same two developers to rate the amount of effort required to complete one product backlog item relative to another product backlog item and you’re far more likely to end up with a consensus.
+
+#### Support
+
+The team is also responsible to support our joint venture partners, the support is split into two components, *Urgent Support*, and *“Normal” Ticket Support*.
+
+1. *Urgent Support* has its own dedicated MS Teams channel to get issues resolved as quickly as possible. For example, we might get a request that a machine has to be restarted that needs a quick response that cannot wait for a ticket. This channel is created under our Data Engineering Team Channel:
+
+INSERT URGENT SUPPORT SCREENSHOT
+
+2. *“Normal” Ticket Support* will go through a ticket logging process. The requester will create a Support ticket and assign it to the appropriate person. These tickets will simply be in the line of a new item such as driver upgrades etc. that should require a ticket and planning from our side. We will make time in our daily stand-up to go through these tickets because they will also form part of our sprint planning/prioritization process.
+
+INSERT TICKET SUPPORT SCREENSHOT
+
+
+
+
 
 #### Definitions of Done
 
