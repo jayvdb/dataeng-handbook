@@ -1,29 +1,27 @@
-# Engineering
-## Development Processes
+# Development Processes
 
-- [Engineering](#engineering)
-  - [Development Processes](#development-processes)
-    - [Data Engineering Team Intro](#intro-team)
-    - [Agile Methodologies](#agile-methodologies)
-      - [Initiatives, Epics, Tasks and Spikes](#initiatives-epics-tasks-and-spikes)
-      - [DE Team Ceremonies Explained](#de-team-ceremonies)
-      - [Backlog Refinement/Grooming](#backlog-refinement)
-      - [Story Points](#story-points)
-      - [Definitions of Done](#definitions-of-done)
-      - [Sprint Workflow](#sprint-workflow)
-    - [How to write a Task/Story](#write-task)
-    - [Support](#support)  
-    - [Git Practices](#git-practices)
-      - [Branching Workflow](#branching-workflow)
-      - [Commit Messages](#commit-messages)
+- [Development Processes](#development-processes)
+  - [Introduction](#introduction)
+  - [Agile Methodologies](#agile-methodologies)
+    - [Initiatives, Epics, Tasks and Spikes](#initiatives-epics-tasks-and-spikes)
+    - [DE Team Ceremonies Explained](#de-team-ceremonies-explained)
+    - [Sprint Planning](#sprint-planning)
+    - [Daily Standup](#daily-standup)
+    - [Sprint Retrospective](#sprint-retrospective)
+    - [Backlog Refinement/Grooming](#backlog-refinementgrooming)
+    - [Story Points](#story-points)
+    - [Definitions of Done](#definitions-of-done)
+    - [Sprint Workflow](#sprint-workflow)
+  - [How to write a Story/Task](#how-to-write-a-storytask)
+  - [Support](#support)
 
 In this section of the handbook we outline our standard development processes i.e. "how" we work.  
 
-### Data Engineering Team Intro
+## Introduction
 
-Welcome to the Data Engineering Team! This page will give you an idea at a high level of how the team operates on a day-to-day basis, weekly, and near future. We welcome any input to improve our processes, we strive to be as adaptable and flexible as possible to make the team the best we can be.
+This page will give you an idea at a high level of how the team operates on a day-to-day basis, weekly, and near future. We welcome any input to improve our processes, we strive to be as adaptable and flexible as possible to make the team the best we can be.
 
-Below I will outline the basic structure and processes of the team.
+Below we will outline the basic structure and processes of the team.
 
 **The Team**
 
@@ -51,7 +49,7 @@ We will have a Sprint Planning session, where we get together to see if any new 
 
 You will see Sprint starting to end, after the sprint end we will conduct a RETRO to see what we did well and what we should do better. This enables the team to adapt to change better because certain company processes do change over time, so should our ways of working. The outcome of these RETROS gives the Delivery Manager a sense of where the team is at and to see if he/she needs to change things how we operate as a team.
 
-### Agile Methodologies
+## Agile Methodologies
 
 We strive to adhere to agile methodologies as much as possible, yet are not agile purists. From the values of the [agile manifesto](https://www.atlassian.com/agile/manifesto): 
 
@@ -73,19 +71,19 @@ in order to build high quality medical device products.
 
 From a day to day perspective we employ the core agile ceremonies, such as daily stand-ups, sprint planning and ticket grooming and retrospectives.  During sprint planning sessions we need to ensure that our planning reflects the current needs of the team and our customers in the context of broader project and release goals.  By being collaborative and responsive to change we can walk this tight-rope between meeting short, medium and long term goals.
 
-#### Initiatives, Epics, Tasks and Spikes
+### Initiatives, Epics, Tasks and Spikes
 
 When planning our work we use the agile concepts of Initiatives, Epics, Tasks and Spikes. Those familiar with agile techniques will note that this is not the full complement of task types available within agile but from experience we have settled on these being the most useful for our purposes.  Working from the top of the hierarchical structure the task types are as follows:
 
 <table style="border: none;">
 <tr><td style="vertical-align: middle; border: none;"></td><td style="vertical-align: middle; border: none;"><strong>Initiatives</strong></td><td style="vertical-align: middle; border: none;">A collection of epics that contribute to a common goal; this is often, but not necessarily a specific software release.</td></tr>
-<tr><td style="vertical-align: middle; border: none;"><img src="./images/epic.svg" alt="epic" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Epics</strong></td><td style="vertical-align: middle; border: none;">Larger bodies of work that can be broken down into smaller tasks; epics typically group a number of requirements into a logical body of work.</td></tr>
-<tr><td style="vertical-align: middle; border: none;"><img src="./images/story.svg" alt="story" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Epics</strong></td><td style="vertical-align: middle; border: none;">A feature or requirement that may or may not have individual tasks that need to be done to satisfy the requirement.  A story can describe work to be done to more than one library/module in a code base.  Stories are often written from the perspective of an end user or the need defined in the feature / requirement.  "Story Points" are also applied to stories.</td></tr>
-<tr><td style="vertical-align: middle; border: none;"><img src="./images/task.svg" alt="task" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Tasks</strong></td><td style="vertical-align: middle; border: none;">The piece of work that needs to be done.  Tasks require a measurable definition of done, "story point" estimates (really should be called task points....), a priority and ideally a completion or due date.  If appropriate tasks can be broken into <strong>Sub-Tasks</strong>; this is typically done if a ticket number is required for a discrete body of work and that work is still described within the original story point estimate.  It is usually preferred to create another related task as opposed to creating sub-tasks.</td></tr>
-<tr><td style="vertical-align: middle; border: none;"><img src="./images/spike.svg" alt="spike" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Spikes</strong></td><td style="vertical-align: middle; border: none;">A piece of exploratory work, often used as a means of gathering requirements for a new set of tasks or to assist in determining a later action or path.  Spikes often have less clearly defined definitions of done, or the definition of done may be to create / inform later tasks.</td></tr>
+<tr><td style="vertical-align: middle; border: none;"><img src="epic.svg" alt="epic" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Epics</strong></td><td style="vertical-align: middle; border: none;">Larger bodies of work that can be broken down into smaller tasks; epics typically group a number of requirements into a logical body of work.</td></tr>
+<tr><td style="vertical-align: middle; border: none;"><img src="story.svg" alt="story" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Epics</strong></td><td style="vertical-align: middle; border: none;">A feature or requirement that may or may not have individual tasks that need to be done to satisfy the requirement.  A story can describe work to be done to more than one library/module in a code base.  Stories are often written from the perspective of an end user or the need defined in the feature / requirement.  "Story Points" are also applied to stories.</td></tr>
+<tr><td style="vertical-align: middle; border: none;"><img src="task.svg" alt="task" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Tasks</strong></td><td style="vertical-align: middle; border: none;">The piece of work that needs to be done.  Tasks require a measurable definition of done, "story point" estimates (really should be called task points....), a priority and ideally a completion or due date.  If appropriate tasks can be broken into <strong>Sub-Tasks</strong>; this is typically done if a ticket number is required for a discrete body of work and that work is still described within the original story point estimate.  It is usually preferred to create another related task as opposed to creating sub-tasks.</td></tr>
+<tr><td style="vertical-align: middle; border: none;"><img src="spike.svg" alt="spike" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Spikes</strong></td><td style="vertical-align: middle; border: none;">A piece of exploratory work, often used as a means of gathering requirements for a new set of tasks or to assist in determining a later action or path.  Spikes often have less clearly defined definitions of done, or the definition of done may be to create / inform later tasks.</td></tr>
 </table>
 
-#### DE Team Ceremonies Explained
+### DE Team Ceremonies Explained
 
 **Introduction**
 Scrum ceremonies are important elements of the agile software delivery process. They are *not just meetings for the sake of having meetings*. Rather, these scrum ceremonies provide the framework for teams to get work done in a structured manner, help to set expectations, empower the team to collaborate effectively, and ultimately drive results. If they’re not managed appropriately, however, they can overwhelm calendars and drown out the value they are intended to provide.
@@ -106,7 +104,7 @@ Simply put: scrum is a way to implement agile.
 
 Conducting these meetings in isolation won’t automatically make your team agile. They have to be a part of a larger, well understood and articulated process. They should facilitate conversations within the agile team to get things done.
 
-#### Sprint Planning
+### Sprint Planning
 What Is Sprint Planning Meeting?
 Sprint Planning is the scrum ceremony designed to make sure the team is prepared to get the right things done every sprint.
 
@@ -115,7 +113,7 @@ This scrum meeting happens at the beginning of a new sprint and is designed for 
 
 The Product Backlog must be ready for review before Sprint Planning begins. This means adding acceptance criteria, requirements, and necessary details for the development team to accurately estimate the level of effort. Only then can the development team accurately forecast the amount of work they can accomplish during the sprint.
 
-#### Daily Standup
+### Daily Standup
 
 **What Is the Daily Standup Meeting?**
 The Daily Standup is the team’s chance to get together, define a plan for the day’s work, and identify any blockers. This meeting enables the the team to be sync and build trust with each other. Let the team hold each other accountable for achieving their commitments on a daily basis.
@@ -132,7 +130,7 @@ During the daily scrum, each member of the Development Team should briefly answe
 
 *Each participant in this scrum meeting should be listening to each other and remain present through the entirety of the meeting. Often times, members of the Development Team will identify opportunities to work together during the day based on commentary during the Daily Scrum.*
 
-#### Sprint Retrospective
+### Sprint Retrospective
 
 **What Is Sprint Retrospective Meeting?**
 The Sprint Retro is the final scrum ceremony in the sequence that allows the team to look back on the work that was just completed and identify items that could be improved.
@@ -148,7 +146,7 @@ Ultimately, this scrum ceremony should provide a blameless space for members of 
 
 *We at Harrison & Annalise is all about constant improvement, and this ceremony is specifically designed to help the team better.*
 
-#### Backlog Refinement/Grooming
+### Backlog Refinement/Grooming
 
 **What is Backlog Refinement?**
 Backlog is defined as the full set of user stories not in the current sprint that defines the remainder of the project’s scope. Left unattended, the list of individual items on a product backlog can quickly become overwhelming to any development team.
@@ -192,7 +190,7 @@ There’s no question that backlog grooming meetings are a critical step in impr
 
 *The intent of backlog refinement is to ensure that the backlog remains populated with items that are relevant, detailed and estimated to a degree appropriate with their priority, and in keeping with current understanding of the project or product and its objectives.*
 
-#### Story Points
+### Story Points
 
 **What is a Story Point?**
 Story points represent the relative sizing of the user story. It is a unit of estimation used by Agile teams to estimate User Stories.
@@ -205,7 +203,7 @@ We are good at comparing size, so estimating a story using Fibonacci series sequ
 
 In the below image are some examples of relative sizing and its estimation points to develop following vehicles: Difficulty could be related to complexities, risks, and efforts involved. Story points are a unit of measure for expressing an estimate of the overall effort that will be required to fully implement a product backlog item or any other piece of work.
 
-!!INSERT SP PIC!!
+![](storypoint.png)
 
 **Factors while estimating stories:**
 > - Complexity : Consider the complexity of the story.
@@ -225,7 +223,7 @@ But to try and match Story Points to hours is missing the point. *What’s impor
 
 Ask those same two developers to rate the amount of effort required to complete one product backlog item relative to another product backlog item and you’re far more likely to end up with a consensus.
 
-#### Definitions of Done
+### Definitions of Done
 
 For a task to be assigned to a sprint it is to contain a measurable definition of done in the task description.  For software engineering tasks it is also expected that unit tests be included in the scope of the task and be contained in any pull request for the ticket.  Higher level tests such as integration tests may be described in other subsequent tasks.
 
@@ -236,7 +234,7 @@ The following trivial example demonstrates a measurable definition of done.
 
 In this definition we can measure the output of the task i.e. calling */status* with the correct expected responses when the microservice is functioning as per requirement 1.2.3.4 and that the unit tests contain checks for the status code.  Obviously this example is so trivial that it is almost self explanatory but it demonstrates that there is no interpretation required in the definition of done. 
 
-#### Sprint Workflow
+### Sprint Workflow
 
 The harrison.ai data engineering team plans and tracks the progress of project goals in 2 week (10 day) sprints, using [Jira](https://www.atlassian.com/software/jira).  Preferably when planning for an upcoming 
 sprint, each task starts unassigned and is only assigned to a team member to work on it when there is capacity available.  As a team we aim to be adequately prepared and resourced so that any one task / ticket could
@@ -256,7 +254,7 @@ from any state except **Done**.
 
 When any type of task or ticket is created a unique reference number is provided e.g. PRO-123 and is to be used when referencing the task or ticket.
 
-### How to write a Story/Task
+## How to write a Story/Task
 The basic fundamentals of a story is that stories should be:
 
 > - Independent
@@ -282,7 +280,7 @@ The basic fundamentals of a story is that stories should be:
 
 Below is a screenshot of how a typical Jira ticket should look like when it is ready for estimation, without these mandatory fields surrounded by the red rectangle the team will not be able to accurately estimate the ticket:
 
-INSERT TICKET TEMPLATE PIC
+![](tickettemplate.png)
 
 **Categories** - In front of the ticket summary field you will need to put into the brackets where will the main area be where this ticket belongs to. 
 
@@ -292,60 +290,13 @@ INSERT TICKET TEMPLATE PIC
 
 **Labels** - Each project deliverable might contain different labels within our JerFire Board. To manage the work and track it correctly we need to label them accordingly. The team might work on two separate workstream within the JetFire board, for example it can be a cost saving project of 3 months and we also need to work on a CTC Release project. The team will decide what we call the label to correspond to the correct project work. The labels will help us get the correct visibility via a Dashboard on the scope of the piece of work for that specific project and also for tracking purposes.
 
-### Support
+## Support
 
 The team is also responsible to support our joint venture partners, the support is split into two components, *Urgent Support*, and *“Normal” Ticket Support*.
 
-1. *Urgent Support* has its own dedicated MS Teams channel to get issues resolved as quickly as possible. For example, we might get a request that a machine has to be restarted that needs a quick response that cannot wait for a ticket. This channel is created under our Data Engineering Team Channel:
+1. *Urgent Support* has its own dedicated MS Teams channel to get issues resolved as quickly as possible. For example, we might get a request that a machine has to be restarted that needs a quick response that cannot wait for a ticket.
 
-INSERT URGENT SUPPORT SCREENSHOT
+2. *“Normal” Ticket Support* will go through a ticket logging process. The requester will create a Support ticket and assign it to the appropriate person. These tickets will simply be in the line of a new item such as driver upgrades etc. that should require a ticket and planning from our side. We will make time in our daily stand-up to go through these tickets because they will also form part of our sprint planning/prioritization process.  **Important** every support ticket needs to have a description, as described above.  If the support ticket is describing a bug or outage please include the steps to replicate as well as the impact of the issue.
 
-2. *“Normal” Ticket Support* will go through a ticket logging process. The requester will create a Support ticket and assign it to the appropriate person. These tickets will simply be in the line of a new item such as driver upgrades etc. that should require a ticket and planning from our side. We will make time in our daily stand-up to go through these tickets because they will also form part of our sprint planning/prioritization process.
+![](supportticket.png)
 
-INSERT TICKET SUPPORT SCREENSHOT
-
-### Git Practices
-
-The harrison.ai data engineering team uses [git](https://git-scm.com/) for source control management and employs the git flow workflow; if you are not familiar or need a refresher on git flow, this explanation by Atlassian [https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) is a useful reference.  Almost all of our git repositories consist of 3 primary branch types:
-
-* **main**: (formerly known as **master**) is the production release branch that contains the code operating within the production environment.  With the exception of **hotfixes**, code can only reach the **main** branch following a pull request and by merging in from the **develop** or in some circumstances a **release** branch.
-* **develop**: is the deployment branch for the development environment.  The develop branch is used as a means of testing patches and features intended for release into the **main** branch.
-* **hotfix**: hotfix branches (forked from master) are used for fixes that must be quickly applied to production code.
-
-Currently the data engineering team does not employ a dedicated **release** branch, due to the size of the teams working on the code base and the desire for fast feedback cycles with production. 
-
-#### Branching Workflow 
-
-When working on a development task the first step is to create an appropriate branch within the correct code repository, to ensure **the newly created branch is up to date** it is recommended that the branch
-be created from the interface of the central repository i.e. github.  If you are creating the branch from a local version of the repo **ensure you fetch the latest updates first**, for either option ensure you
-are branching from **develop** with the exception of **hotfixes** which are to branch from **main**.
-
-The following naming convention is to be used when creating new branches:
-
-> **BRANCH TYPE/TASK REFERENCE**
-
-where **BRANCH TYPE** is one of:
-
-* feature
-* bugfix
-* hotfix
-
-and the **TASK REFERENCE** is the task or ticket number created from Jira.
-
-Examples:
-
-> feature/PRO-123
->
-> bugfix/FOO-1024
->
-> hotfix/BAR-785
-
-The intent behind this naming convention is that when looking at pull requests or a list of branches for a repository their context can be easily determined by the branch type and more detailed information such as 
-the definition of done can be obtained by referring to the corresponding Jira ticket.  This is particularly useful for reviewers of pull requests to ensure the branch meets the requirements of the definition of done.
-
-Once you have committed your patch to the branch a pull request is then created, to merge the patch into the original source branch with the name of the branch in the title.
-
-
-#### Commit Messages
-
-TODO: As per [https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
