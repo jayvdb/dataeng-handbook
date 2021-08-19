@@ -5,8 +5,6 @@ Welcome to the [harrison.ai](https://harrison.ai) Data Engineering Handbook.  Th
 ## Contents
 
 * [About Us](about.html)
-
-### Engineering
-
-* [Development Processes](engineering/dev/index.html)
-* [Source Control Processes](engineering/git/index.html)
+* [Engineering](engineering/index.html)
+  * [Development Processes](engineering/dev/index.html)
+  * [Source Control Processes](engineering/git/index.html)
