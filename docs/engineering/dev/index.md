@@ -290,6 +290,19 @@ Below is a screenshot of how a typical Jira ticket should look like when it is r
 
 **Labels** - Each project deliverable might contain different labels within our JerFire Board. To manage the work and track it correctly we need to label them accordingly. The team might work on two separate workstream within the JetFire board, for example it can be a cost saving project of 3 months and we also need to work on a CTC Release project. The team will decide what we call the label to correspond to the correct project work. The labels will help us get the correct visibility via a Dashboard on the scope of the piece of work for that specific project and also for tracking purposes.
 
+```markdown
+**Technical Details**
+Technical details here
+
+**Repositories**
+Optional paragraph containing relevant repos
+
+**Definition of Done (DoD)**
+These things need to be done
+* foo
+* bar
+```
+
 ## Support
 
 The team is also responsible to support our joint venture partners, the support is split into two components, *Urgent Support*, and *“Normal” Ticket Support*.
