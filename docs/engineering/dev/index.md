@@ -3,7 +3,7 @@
 - [Development Processes](#development-processes)
   - [Introduction](#introduction)
   - [Agile Methodologies](#agile-methodologies)
-    - [Initiatives, Epics, Tasks and Spikes](#initiatives-epics-tasks-and-spikes)
+    - [Initiatives, Epics, Stories, Tasks and Spikes](#initiatives-epics-stories-tasks-and-spikes)
     - [DE Team Ceremonies Explained](#de-team-ceremonies-explained)
     - [Sprint Planning](#sprint-planning)
     - [Daily Standup](#daily-standup)
@@ -71,14 +71,14 @@ in order to build high quality medical device products.
 
 From a day to day perspective we employ the core agile ceremonies, such as daily stand-ups, sprint planning and ticket grooming and retrospectives.  During sprint planning sessions we need to ensure that our planning reflects the current needs of the team and our customers in the context of broader project and release goals.  By being collaborative and responsive to change we can walk this tight-rope between meeting short, medium and long term goals.
 
-### Initiatives, Epics, Tasks and Spikes
+### Initiatives, Epics, Stories, Tasks and Spikes
 
 When planning our work we use the agile concepts of Initiatives, Epics, Tasks and Spikes. Those familiar with agile techniques will note that this is not the full complement of task types available within agile but from experience we have settled on these being the most useful for our purposes.  Working from the top of the hierarchical structure the task types are as follows:
 
 <table style="border: none;">
 <tr><td style="vertical-align: middle; border: none;"></td><td style="vertical-align: middle; border: none;"><strong>Initiatives</strong></td><td style="vertical-align: middle; border: none;">A collection of epics that contribute to a common goal; this is often, but not necessarily a specific software release.</td></tr>
 <tr><td style="vertical-align: middle; border: none;"><img src="epic.svg" alt="epic" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Epics</strong></td><td style="vertical-align: middle; border: none;">Larger bodies of work that can be broken down into smaller tasks; epics typically group a number of requirements into a logical body of work.</td></tr>
-<tr><td style="vertical-align: middle; border: none;"><img src="story.svg" alt="story" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Epics</strong></td><td style="vertical-align: middle; border: none;">A feature or requirement that may or may not have individual tasks that need to be done to satisfy the requirement.  A story can describe work to be done to more than one library/module in a code base.  Stories are often written from the perspective of an end user or the need defined in the feature / requirement.  "Story Points" are also applied to stories.</td></tr>
+<tr><td style="vertical-align: middle; border: none;"><img src="story.svg" alt="story" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Stories</strong></td><td style="vertical-align: middle; border: none;">A feature or requirement that may or may not have individual tasks that need to be done to satisfy the requirement.  A story can describe work to be done to more than one library/module in a code base.  Stories are often written from the perspective of an end user or the need defined in the feature / requirement.  "Story Points" are also applied to stories.</td></tr>
 <tr><td style="vertical-align: middle; border: none;"><img src="task.svg" alt="task" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Tasks</strong></td><td style="vertical-align: middle; border: none;">The piece of work that needs to be done.  Tasks require a measurable definition of done, "story point" estimates (really should be called task points....), a priority and ideally a completion or due date.  If appropriate tasks can be broken into <strong>Sub-Tasks</strong>; this is typically done if a ticket number is required for a discrete body of work and that work is still described within the original story point estimate.  It is usually preferred to create another related task as opposed to creating sub-tasks.</td></tr>
 <tr><td style="vertical-align: middle; border: none;"><img src="spike.svg" alt="spike" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Spikes</strong></td><td style="vertical-align: middle; border: none;">A piece of exploratory work, often used as a means of gathering requirements for a new set of tasks or to assist in determining a later action or path.  Spikes often have less clearly defined definitions of done, or the definition of done may be to create / inform later tasks.</td></tr>
 </table>
@@ -289,6 +289,19 @@ Below is a screenshot of how a typical Jira ticket should look like when it is r
 **Definition of Done (DoD)** - This part is the most important one of them all, the list will contain one or more items we need to satisfy before the ticket can be moved to a Review/Done status.
 
 **Labels** - Each project deliverable might contain different labels within our JerFire Board. To manage the work and track it correctly we need to label them accordingly. The team might work on two separate workstream within the JetFire board, for example it can be a cost saving project of 3 months and we also need to work on a CTC Release project. The team will decide what we call the label to correspond to the correct project work. The labels will help us get the correct visibility via a Dashboard on the scope of the piece of work for that specific project and also for tracking purposes.
+
+```markdown
+**Technical Details**
+Technical details here
+
+**Repositories**
+Optional paragraph containing relevant repos
+
+**Definition of Done (DoD)**
+These things need to be done
+* foo
+* bar
+```
 
 ## Support
 
