@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>harrison.ai Data Engineering Handbook - Development Processes</title>
+  <meta name="author" content="harrison.ai Data Engineering Team">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="top" href="#" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../theme/css/base.css" type="text/css" />
+  <link rel="stylesheet" href="../theme/css/style.css" type="text/css" />
+
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <a href="/"><img src="../theme/images/icons/Harrison-AI_Logo-Stack_White_RGB.svg"
+            alt="" height="100" class="align: center; d-inline-block align-text-middle"></a>
+      </div>
+
+      <p style="text-align: center;"><strong>Data Engineering Handbook</strong></p>
+
+
+      <nav class="pages">
+
+        <ul class="list-unstyled components">
+          <li class="active">
+            <a href="/index.html" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a><ul class="list-unstyled" id="Welcome"><li><a href="/index.html">Welcome</a></li>
+            <li><a href="/pages/about.html">About Us</a></li>
+            </ul>
+            <a href="/pages/engineering.html" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Engineering</a><ul class="list-unstyled" id="Introduction"><li><a href="/pages/engineering.html">Introduction</a></li>
+            <li><a href="/pages/source_control.html">Source Control Processes</a></li>
+            <li><a href="/pages/dev.html">Development Processes</a></li>
+            </ul>
+            </ul>
+          </li>
+        </ul>
+
+      </nav>
+
+  </div>
+  <div id="content" class="container-fluid">
+
+    <h1>Development Processes</h1>
+    
+
+    <ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#agile-methodologies">Agile Methodologies</a></li>
+<li><a href="#initiatives-epics-stories-tasks-and-spikes">Initiatives, Epics, Stories, Tasks and Spikes</a></li>
+<li><a href="#de-team-ceremonies-explained">DE Team Ceremonies Explained</a></li>
+<li><a href="#sprint-planning">Sprint Planning</a></li>
+<li><a href="#daily-standup">Daily Standup</a></li>
+<li><a href="#sprint-retrospective">Sprint Retrospective</a></li>
+<li><a href="#backlog-refinementgrooming">Backlog Refinement/Grooming</a></li>
+<li><a href="#story-points">Story Points</a></li>
+<li><a href="#definitions-of-done">Definitions of Done</a></li>
+<li><a href="#sprint-workflow">Sprint Workflow</a></li>
+<li><a href="#how-to-write-a-storytask">How to write a Story/Task</a></li>
+<li><a href="#support">Support</a></li>
+</ul>
+<p>In this section of the handbook we outline our standard development processes i.e. "how" we work.  </p>
+<h3 id="introduction"><a class="toclink" href="#introduction">Introduction</a><a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
+<p>This page will give you an idea at a high level of how the team operates on a day-to-day basis, weekly, and near future. We welcome any input to improve our processes, we strive to be as adaptable and flexible as possible to make the team the best we can be.</p>
+<p>Below we will outline the basic structure and processes of the team.</p>
+<p><strong>The Team</strong></p>
+<p>Our main responsibility is the design, implementation, support and maintenance of Harrison.ai’s world-leading data engineering platforms. The goal of this platform is to provide Harrison.ai’s AI engineers with an efficient method of creating world-class AI models from a vast array of data sources.  The platform provides a seamless experience for gathering and labeling data acquired from various sources as well as training and evaluating new models. </p>
+<p>We define, understand, and translate the requirements of our stakeholders into well-designed technical solutions.  Working in partnership with infrastructure engineers within the Harrison.ai data engineering team, you will build high-quality software that powers our data labeling efforts, data processing pipelines, provides controlled API access to our data lake, and manages our various AI model training infrastructure. </p>
+<p>We are a small team that consists of AI Engineers and AWS Infrastructure team members, the team is getting help from the Deliver Manager that plays the role of managing the processes of the team, running the SCRUM Ceremonies, and anything else to support the team to deliver the Sprint outcome and more. There is no Scrum Master or Product Owner because of the structure of our team within the business. For big deliverables, the business will indicate to us what the priority is, we as a team will decide within those deliverables what has to be prioritized via team discussions.</p>
+<p><strong>What Methodology/Framework are we using?</strong></p>
+<p>For now, we going with SCRUM, the sprints keep the team focused, and having a few sprints planned ahead gives us the visibility to manage the impact of new requirements getting prioritized.</p>
+<p><strong>What does a typical day of the team look like</strong></p>
+<p>In the morning the team kicks of their day with a daily stand-up, this set’s us up for the rest of the day what the team will be doing and also if there is anything that blocks a team member. We can address the blocking concern if it is something that a team member can assist. If the issue is more complicated and someone needs help outside the team, we can address this in the meeting, take action, and schedule something outside the daily stand-up.</p>
+<p>The team is available on MS Teams for any questions or feedback. We do have certain channels set up for any discussion based on certain groups (Support, Data Engineering General, Data Migration, etc.). This will enable us to make sure the team is across any discussions and kept in the loop, this is beneficial in many ways because someone might have knowledge or feedback. There are obvious ad-hoc/personal chats that can be done via personal communication.</p>
+<p><strong>What does a typical week look like?</strong></p>
+<p>We will have a Sprint Planning session, where we get together to see if any new items have been added to the product backlog and how we can accommodate these priorities into our sprint backlog. Each team member will need to write Jira tickets (Tasks/Stories) according to the ticket writing template. Once the ticket(s) have been written, added to the backlog, and prioritized we will bring these new tickets into our sprint planning session to be estimated by the team by using story points. By creating the tickets using the template we will be in a position to estimate more accurately. In this session we will also see the impact of the newly added tickets into our sprint backlog, each team member has a certain velocity based on their output. Some team members will be more involved in meetings and other commitments, hence their velocity will be less than someone that is fully dedicated to the sprint. We usually accommodate a few story points as a buffer for meetings etc.</p>
+<p><strong>What happens after 2 weeks or so?</strong></p>
+<p>You will see Sprint starting to end, after the sprint end we will conduct a RETRO to see what we did well and what we should do better. This enables the team to adapt to change better because certain company processes do change over time, so should our ways of working. The outcome of these RETROS gives the Delivery Manager a sense of where the team is at and to see if he/she needs to change things how we operate as a team.</p>
+<h3 id="agile-methodologies"><a class="toclink" href="#agile-methodologies">Agile Methodologies</a><a class="headerlink" href="#agile-methodologies" title="Permanent link">&para;</a></h3>
+<p>We strive to adhere to agile methodologies as much as possible, yet are not agile purists. From the values of the <a href="https://www.atlassian.com/agile/manifesto">agile manifesto</a>: </p>
+<blockquote>
+<ul>
+<li><strong>Individuals and interactions</strong> over processes and tools</li>
+<li><strong>Working software</strong> over comprehensive documentation</li>
+<li><strong>Customer collaboration</strong> over contract negotiation </li>
+<li><strong>Responding to change</strong> over following a plan </li>
+</ul>
+</blockquote>
+<p>Our team prioritise these values in the following order:</p>
+<blockquote>
+<ul>
+<li><strong>Customer collaboration</strong> over contract negotiation </li>
+<li><strong>Responding to change</strong> over following a plan </li>
+<li><strong>Individuals and interactions</strong> over processes and tools</li>
+<li><strong>Working software</strong> over comprehensive documentation</li>
+</ul>
+</blockquote>
+<p>As the manifesto itself states that the items on the right are not valued or important, but the items on the left are valued more.  Similarly as a team that does not mean that <strong>working software</strong> or documentation 
+are not important compared with customer collaboration, as a highly regulated medical device development company these values are mandatory. It means that we need to ensure we are collaborative, dynamic and responsive 
+in order to build high quality medical device products. </p>
+<p>From a day to day perspective we employ the core agile ceremonies, such as daily stand-ups, sprint planning and ticket grooming and retrospectives.  During sprint planning sessions we need to ensure that our planning reflects the current needs of the team and our customers in the context of broader project and release goals.  By being collaborative and responsive to change we can walk this tight-rope between meeting short, medium and long term goals.</p>
+<h4 id="initiatives-epics-stories-tasks-and-spikes"><a class="toclink" href="#initiatives-epics-stories-tasks-and-spikes">Initiatives, Epics, Stories, Tasks and Spikes</a><a class="headerlink" href="#initiatives-epics-stories-tasks-and-spikes" title="Permanent link">&para;</a></h4>
+<p>When planning our work we use the agile concepts of Initiatives, Epics, Tasks and Spikes. Those familiar with agile techniques will note that this is not the full complement of task types available within agile but from experience we have settled on these being the most useful for our purposes.  Working from the top of the hierarchical structure the task types are as follows:</p>
+<table style="border: none;">
+<tr><td style="vertical-align: middle; border: none;"></td><td style="vertical-align: middle; border: none;"><strong>Initiatives</strong></td><td style="vertical-align: middle; border: none;">A collection of epics that contribute to a common goal; this is often, but not necessarily a specific software release.</td></tr>
+<tr><td style="vertical-align: middle; border: none;"><img src="../pages/epic.svg" alt="epic" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Epics</strong></td><td style="vertical-align: middle; border: none;">Larger bodies of work that can be broken down into smaller tasks; epics typically group a number of requirements into a logical body of work.</td></tr>
+<tr><td style="vertical-align: middle; border: none;"><img src="../pages/story.svg" alt="story" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Stories</strong></td><td style="vertical-align: middle; border: none;">A feature or requirement that may or may not have individual tasks that need to be done to satisfy the requirement.  A story can describe work to be done to more than one library/module in a code base.  Stories are often written from the perspective of an end user or the need defined in the feature / requirement.  "Story Points" are also applied to stories.</td></tr>
+<tr><td style="vertical-align: middle; border: none;"><img src="../pages/task.svg" alt="task" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Tasks</strong></td><td style="vertical-align: middle; border: none;">The piece of work that needs to be done.  Tasks require a measurable definition of done, "story point" estimates (really should be called task points....), a priority and ideally a completion or due date.  If appropriate tasks can be broken into <strong>Sub-Tasks</strong>; this is typically done if a ticket number is required for a discrete body of work and that work is still described within the original story point estimate.  It is usually preferred to create another related task as opposed to creating sub-tasks.</td></tr>
+<tr><td style="vertical-align: middle; border: none;"><img src="../pages/spike.svg" alt="spike" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Spikes</strong></td><td style="vertical-align: middle; border: none;">A piece of exploratory work, often used as a means of gathering requirements for a new set of tasks or to assist in determining a later action or path.  Spikes often have less clearly defined definitions of done, or the definition of done may be to create / inform later tasks.</td></tr>
+</table>
+
+<h4 id="de-team-ceremonies-explained"><a class="toclink" href="#de-team-ceremonies-explained">DE Team Ceremonies Explained</a><a class="headerlink" href="#de-team-ceremonies-explained" title="Permanent link">&para;</a></h4>
+<p><strong>Introduction</strong>
+Scrum ceremonies are important elements of the agile software delivery process. They are <em>not just meetings for the sake of having meetings</em>. Rather, these scrum ceremonies provide the framework for teams to get work done in a structured manner, help to set expectations, empower the team to collaborate effectively, and ultimately drive results. If they’re not managed appropriately, however, they can overwhelm calendars and drown out the value they are intended to provide.</p>
+<p>These scrum ceremonies fulfill &amp; enable several core/original principles. Often, when teams abandon certain ceremonies it’s because they don’t see the value in them anymore, which indicates they may have also abandoned the principles.</p>
+<p>Let’s unpack some important scrum ceremonies, delving into their purpose, attendees, and tips &amp; tricks to make them most effective. The important scrum ceremonies are:</p>
+<blockquote>
+<ul>
+<li>Sprint Planning</li>
+<li>Daily Standup</li>
+<li>Sprint Review</li>
+<li>Sprint Retrospective</li>
+</ul>
+</blockquote>
+<p>I’m not going into detail regarding the <strong>Sprint Review</strong> ceremony because each team might not have this infrastructure to use. This is the ceremony where all work completed during the sprint can be showcased the stakeholders. We do have some Sprint Reviews can it be conducted in a casual “Demo Friday” nature. This will differ from each team/project and it would not be a “compulsory” item after each sprint.</p>
+<p>It is important to note that these ceremonies are specific to the SCRUM framework, an agile process that teams use around the world to build things that work. Scrum is intentionally lightweight and simple, but it can be difficult to master.</p>
+<p>Simply put: scrum is a way to implement agile.</p>
+<p>Conducting these meetings in isolation won’t automatically make your team agile. They have to be a part of a larger, well understood and articulated process. They should facilitate conversations within the agile team to get things done.</p>
+<h4 id="sprint-planning"><a class="toclink" href="#sprint-planning">Sprint Planning</a><a class="headerlink" href="#sprint-planning" title="Permanent link">&para;</a></h4>
+<p>What Is Sprint Planning Meeting?
+Sprint Planning is the scrum ceremony designed to make sure the team is prepared to get the right things done every sprint.</p>
+<p><strong>What’s Its Purpose?</strong>
+This scrum meeting happens at the beginning of a new sprint and is designed for the Development Team to meet and review the prioritized Product Backlog. Through a series of discussions and negotiations, the team should ultimately create a sprint backlog that contains all items they are committing to complete at the end of the sprint. This is called the sprint goal. The sprint goal should be a shippable increment of work, meaning it can be demonstrated at the end of a sprint. </p>
+<p>The Product Backlog must be ready for review before Sprint Planning begins. This means adding acceptance criteria, requirements, and necessary details for the development team to accurately estimate the level of effort. Only then can the development team accurately forecast the amount of work they can accomplish during the sprint.</p>
+<h4 id="daily-standup"><a class="toclink" href="#daily-standup">Daily Standup</a><a class="headerlink" href="#daily-standup" title="Permanent link">&para;</a></h4>
+<p><strong>What Is the Daily Standup Meeting?</strong>
+The Daily Standup is the team’s chance to get together, define a plan for the day’s work, and identify any blockers. This meeting enables the the team to be sync and build trust with each other. Let the team hold each other accountable for achieving their commitments on a daily basis.</p>
+<p><strong>What’s Its Purpose?</strong>
+This scrum ceremony provides a frequent opportunity for the team to get together and communicate individual progress toward the sprint goal. <em>The outcome of the daily standup should illuminate any impediments the team is having</em>. The team can identify who is responsible for clearing these roadblocks for the Development Team so they can focus on delivering the work identified in Sprint Planning.</p>
+<p><em>The Daily Scrum is more than just a status update; it’s a pulse check that should illuminate any impediments that are slowing the team’s progress.</em></p>
+<p>During the daily scrum, each member of the Development Team should briefly answer the following questions:</p>
+<blockquote>
+<ul>
+<li>What did you do yesterday?</li>
+<li>What will you do today?</li>
+<li>Are there any impediments in the way?</li>
+</ul>
+</blockquote>
+<p><em>Each participant in this scrum meeting should be listening to each other and remain present through the entirety of the meeting. Often times, members of the Development Team will identify opportunities to work together during the day based on commentary during the Daily Scrum.</em></p>
+<h4 id="sprint-retrospective"><a class="toclink" href="#sprint-retrospective">Sprint Retrospective</a><a class="headerlink" href="#sprint-retrospective" title="Permanent link">&para;</a></h4>
+<p><strong>What Is Sprint Retrospective Meeting?</strong>
+The Sprint Retro is the final scrum ceremony in the sequence that allows the team to look back on the work that was just completed and identify items that could be improved.</p>
+<p><strong>What’s Its Purpose?</strong>
+After a Sprint Review has been conducted, the team needs to have the opportunity to reflect on the work that was delivered in the latest sprint and discuss ways in which to improve. The sprint retrospective is that meeting. It gives the team a platform to discuss things that are going well, things that could go better, and some suggestions for changes. Some common questions asked are:</p>
+<blockquote>
+<ul>
+<li>What went well over the last sprint?</li>
+<li>What didn’t go so well?</li>
+<li>What could we do differently to improve?</li>
+</ul>
+</blockquote>
+<p>Ultimately, this scrum ceremony should provide a blameless space for members of the team to provide their honest feedback and recommendations for improvements. It should drive change. All actionable feedback should be collected and assigned so that members of the scrum team understand who is responsible for what.</p>
+<p><em>We at Harrison &amp; Annalise is all about constant improvement, and this ceremony is specifically designed to help the team better.</em></p>
+<h4 id="backlog-refinementgrooming"><a class="toclink" href="#backlog-refinementgrooming">Backlog Refinement/Grooming</a><a class="headerlink" href="#backlog-refinementgrooming" title="Permanent link">&para;</a></h4>
+<p><strong>What is Backlog Refinement?</strong>
+Backlog is defined as the full set of user stories not in the current sprint that defines the remainder of the project’s scope. Left unattended, the list of individual items on a product backlog can quickly become overwhelming to any development team.</p>
+<p>When that happens, the status of individual user stories can become unclear, the team can lose focus on important tasks and they may have trouble estimating the time and resources needed to complete items, and the project completion date can slip.</p>
+<p>Enter the product backlog grooming meeting, which is basically a meeting between the project manager and customer point of contact in which the participants break the backlog down into user stories and reprioritize them.</p>
+<p>You may also hear it referred to as a product backlog refinement meeting or story time session, but whatever the terminology, the purpose is to discuss the current backlog list and offer suggestions for improving it, which may take the form of:</p>
+<blockquote>
+<ul>
+<li>writing new user stories, a process we outline in the post, Our Approach to Developing User Stories.</li>
+<li>Refining and reprioritizing previously written user stories and breaking them down into smaller stories, if needed.</li>
+<li>removing user stories that no longer appear relevant</li>
+<li>creating new user stories in response to newly discovered needs</li>
+<li>re-assessing the relative priority of stories</li>
+<li>assigning estimates to stories which have yet to receive one</li>
+<li>correcting estimates in light of newly discovered information</li>
+<li>splitting user stories which are high priority but too coarse grained to fit in an upcoming iteration</li>
+<li>reviewing time and personnel estimates for individual backlog items, utilizing what we’ve learned from completed sprints.</li>
+<li>adding new product features, then prioritizing and estimating them.</li>
+<li>looking more extensively into the total backlog to enable long-range technical and project planning.</li>
+</ul>
+</blockquote>
+<p><em>Take special note of the last item</em>: long-range technical and project planning. Many project managers limit grooming meetings to tasks related to the next sprint, but we believe that approach misses an opportunity to keep a project that’s in good shape running well in subsequent sprints. For example, the meeting can be useful in alerting product owners of possible challenges and obstacles down the road, keeping the team on track and ahead of schedule.</p>
+<p><strong>Plan for Success</strong></p>
+<p>Implementing well-managed meetings will improve the overall speed and efficiency of the sprint planning meetings that follow, helping to boost commitment and product familiarity.</p>
+<p>It’s important to clearly state expectations upfront for what needs to be accomplished during the meeting and have a set agenda. This puts everyone in the same mindset, saves valuable time and keeps the meeting flowing smoothly. Sometimes these recurring meetings can get tedious so a well-run meeting will make all the difference.</p>
+<p>The goal here is for all attendees to leave the meeting with a clear understanding of what is left for project completion and the upcoming sprint goals.</p>
+<p><strong>A story is ready for a sprint when:</strong></p>
+<blockquote>
+<ul>
+<li>It is completely groomed;</li>
+<li>Technical Details is included and Definition of Done is written;</li>
+<li>There are no open questions/impediments attached to it;</li>
+<li>It has been placed in the backlog;</li>
+</ul>
+</blockquote>
+<p><strong>Final Thought</strong>
+There’s no question that backlog grooming meetings are a critical step in improving the speed and efficiency of your agile project, greatly reducing scope creep and increasing team grasp of project deliverables. Adhering to the best practices above can ensure that you get the most of backlog grooming meetings.</p>
+<p><em>The intent of backlog refinement is to ensure that the backlog remains populated with items that are relevant, detailed and estimated to a degree appropriate with their priority, and in keeping with current understanding of the project or product and its objectives.</em></p>
+<h4 id="story-points"><a class="toclink" href="#story-points">Story Points</a><a class="headerlink" href="#story-points" title="Permanent link">&para;</a></h4>
+<p><strong>What is a Story Point?</strong>
+Story points represent the relative sizing of the user story. It is a unit of estimation used by Agile teams to estimate User Stories.</p>
+<p>When the client/stakeholder wants some features to be developed, he/she desires to know how soon the team can complete the features and how many resources it will take to complete the work. From the developer’s perspective it’s next to impossible to predict the exact time in which he/she can complete the work. The person can, however, give a rough estimate in terms of how much time it might take to complete the work. Note that instead of “will” the developer chose to use “might” because he/she is not absolutely “sure” about the time factor but “feels” it might take that much time. This is user story estimation in a nutshell.</p>
+<p>You don’t give an exact number explaining how complex the story is and how long it’ll take to develop – you give a rough “estimate”.</p>
+<p>We are good at comparing size, so estimating a story using Fibonacci series sequence (0, 1, 2, 3, 5, 8, 13, 20, 40, and 100) gives more clarity of its complexity and relative sizing in terms of development.</p>
+<p>In the below image are some examples of relative sizing and its estimation points to develop following vehicles: Difficulty could be related to complexities, risks, and efforts involved. Story points are a unit of measure for expressing an estimate of the overall effort that will be required to fully implement a product backlog item or any other piece of work.</p>
+<p><img alt="story points" src="../pages/storypoint.png" /></p>
+<p><strong>Factors while estimating stories:</strong></p>
+<blockquote>
+<ul>
+<li>Complexity : Consider the complexity of the story.</li>
+<li>Risk : Consider the team’s inexperience with developing this story.</li>
+<li>Implementation : Consider the implementation factors.</li>
+<li>Deployment : Consider the deployment requirements.</li>
+<li>Interdependencies : Consider other outside issues.</li>
+</ul>
+</blockquote>
+<p><strong>What’s wrong with using time as a unit of measure?</strong>
+Why can’t we use hours or days? Well, in a nutshell, because your hour is not the same as my hour.</p>
+<p>If you ask two developers to estimate the same task, you’ll get two different answers. While some of the difference might be explained by gaps in the specification or understanding, the fact is that developers have different knowledge and experiences so it will take more or less time to do the same work.</p>
+<p>Until we understand what the team’s velocity is, we still can’t predict when product backlog items are likely to be completed. Worse, if the membership of the team changes, the velocity will change and we won’t know what that new velocity is until some time down the road.</p>
+<p>But to try and match Story Points to hours is missing the point. <em>What’s important is how many Story Points a team can complete in a sprint, known as the velocity. When you know this, you can make some predictions and you know what, they’re likely to be good. Very good.</em></p>
+<p>Ask those same two developers to rate the amount of effort required to complete one product backlog item relative to another product backlog item and you’re far more likely to end up with a consensus.</p>
+<h4 id="definitions-of-done"><a class="toclink" href="#definitions-of-done">Definitions of Done</a><a class="headerlink" href="#definitions-of-done" title="Permanent link">&para;</a></h4>
+<p>For a task to be assigned to a sprint it is to contain a measurable definition of done in the task description.  For software engineering tasks it is also expected that unit tests be included in the scope of the task and be contained in any pull request for the ticket.  Higher level tests such as integration tests may be described in other subsequent tasks.</p>
+<p>The following trivial example demonstrates a measurable definition of done.</p>
+<blockquote>
+<p><strong>Task</strong>: Create status endpoint for foo microservice</p>
+<p><strong>Definition of Done</strong>:  Add a new endpoint to the foo microservice with location of <em>/status</em> that returns HTTP status code 200 OK when foo is operational and HTTP status code 404 when foo is not functioning as per functional requirement 1.2.3.4.  The unit test for the endpoint will validate the returned status codes for operational and non-operational situations.</p>
+</blockquote>
+<p>In this definition we can measure the output of the task i.e. calling <em>/status</em> with the correct expected responses when the microservice is functioning as per requirement 1.2.3.4 and that the unit tests contain checks for the status code.  Obviously this example is so trivial that it is almost self explanatory but it demonstrates that there is no interpretation required in the definition of done. </p>
+<h4 id="sprint-workflow"><a class="toclink" href="#sprint-workflow">Sprint Workflow</a><a class="headerlink" href="#sprint-workflow" title="Permanent link">&para;</a></h4>
+<p>The harrison.ai data engineering team plans and tracks the progress of project goals in 2 week (10 day) sprints, using <a href="https://www.atlassian.com/software/jira">Jira</a>.  Preferably when planning for an upcoming 
+sprint, each task starts unassigned and is only assigned to a team member to work on it when there is capacity available.  As a team we aim to be adequately prepared and resourced so that any one task / ticket could
+be completed by more than one member of the team; allowing for more efficient usage of time and making it easier for team members to take leave without affecting the status of the project.</p>
+<p>A task or ticket can take on one of the following states:</p>
+<ol>
+<li><strong>To Do</strong>: the initial state</li>
+<li><strong>In Progress</strong>: being actively worked on</li>
+<li><strong>Blocked</strong>: the task is awaiting some other requirement or dependency before it can be completed or ready for review</li>
+<li><strong>In Review</strong>: completion being reviewed as per <a href="#definitions-of-done">definition of done</a></li>
+<li><strong>Abandoned</strong>: the ticket is a duplicate or not relevant anymore.</li>
+<li><strong>Done</strong>: the task is complete</li>
+</ol>
+<p>tasks logically progress from state 1 to 4 and with the exception of <strong>To Do</strong> and <strong>Done</strong> can fall back to a previous state if required.  A task can enter <strong>Blocked</strong> state
+from any state except <strong>Done</strong>.</p>
+<p>When any type of task or ticket is created a unique reference number is provided e.g. PRO-123 and is to be used when referencing the task or ticket.</p>
+<h3 id="how-to-write-a-storytask"><a class="toclink" href="#how-to-write-a-storytask">How to write a Story/Task</a><a class="headerlink" href="#how-to-write-a-storytask" title="Permanent link">&para;</a></h3>
+<p>The basic fundamentals of a story is that stories should be:</p>
+<blockquote>
+<ul>
+<li>Independent</li>
+<li>Negotiable</li>
+<li>Valuable</li>
+<li>Estimable</li>
+<li>Small</li>
+<li>Testable</li>
+</ul>
+</blockquote>
+<p><em>EVERY</em> story should have a Technical Details and Definition of Done.</p>
+<p><strong>Technical Details Goals</strong></p>
+<blockquote>
+<ul>
+<li>to clarify what the team should build before they start work</li>
+<li>to ensure everyone has a common understanding of the problem/need of the customer</li>
+<li>to help team members know when the story is complete</li>
+</ul>
+</blockquote>
+<p><strong>Definition of Done (DoD)</strong></p>
+<blockquote>
+<ul>
+<li>DoD includes, for instance:</li>
+<li>unit/integrated testing</li>
+<li>ready for acceptance test</li>
+<li>deployed on demo server</li>
+<li>all applicable objects are in the S3 Glacier storage class</li>
+</ul>
+</blockquote>
+<p>Below is a screenshot of how a typical Jira ticket should look like when it is ready for estimation, without these mandatory fields surrounded by the red rectangle the team will not be able to accurately estimate the ticket:</p>
+<p><img alt="Ticket Template" src="../pages/tickettemplate.png" /></p>
+<p><strong>Categories</strong> - In front of the ticket summary field you will need to put into the brackets where will the main area be where this ticket belongs to. </p>
+<p><strong>Technical Details</strong> - This will give the team member the background of the ticket and any critical things he will needs to take in consideration. Some detail for example where the file location is, dependencies, etc.</p>
+<p><strong>Definition of Done (DoD)</strong> - This part is the most important one of them all, the list will contain one or more items we need to satisfy before the ticket can be moved to a Review/Done status.</p>
+<p><strong>Labels</strong> - Each project deliverable might contain different labels within our JerFire Board. To manage the work and track it correctly we need to label them accordingly. The team might work on two separate workstream within the JetFire board, for example it can be a cost saving project of 3 months and we also need to work on a CTC Release project. The team will decide what we call the label to correspond to the correct project work. The labels will help us get the correct visibility via a Dashboard on the scope of the piece of work for that specific project and also for tracking purposes.</p>
+<pre><code class="language-markdown">**Technical Details**
+Technical details here
+
+**Repositories**
+Optional paragraph containing relevant repos
+
+**Definition of Done (DoD)**
+These things need to be done
+* foo
+* bar
+</code></pre>
+<h3 id="support"><a class="toclink" href="#support">Support</a><a class="headerlink" href="#support" title="Permanent link">&para;</a></h3>
+<p>The team is also responsible to support our joint venture partners, the support is split into two components, <em>Urgent Support</em>, and <em>“Normal” Ticket Support</em>.</p>
+<ol>
+<li>
+<p><em>Urgent Support</em> has its own dedicated MS Teams channel to get issues resolved as quickly as possible. For example, we might get a request that a machine has to be restarted that needs a quick response that cannot wait for a ticket.</p>
+</li>
+<li>
+<p><em>“Normal” Ticket Support</em> will go through a ticket logging process. The requester will create a Support ticket and assign it to the appropriate person. These tickets will simply be in the line of a new item such as driver upgrades etc. that should require a ticket and planning from our side. We will make time in our daily stand-up to go through these tickets because they will also form part of our sprint planning/prioritization process.  <strong>Important</strong> every support ticket needs to have a description, as described above.  If the support ticket is describing a bug or outage please include the steps to replicate as well as the impact of the issue.</p>
+</li>
+</ol>
+<p><img alt="support ticket" src="../pages/supportticket.png" /></p>
+
+
+    <footer>
+
+
+
+      <p role="contentinfo">
+        © 2013 harrison.ai Data Engineering Team - Proudly powered by <a href="https://docs.getpelican.com/en/latest/">pelican</a>
+      </p>
+
+  </div>
+
+  <!-- </div> -->
+
+  <!-- </div> -->
+  <!-- jQuery CDN -->
+  <!-- <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> -->
+  <!-- Bootstrap Js CDN -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+  <!-- <script type="text/javascript">
+    $(document).ready(function () {
+      $('.dropdown-toggle').on('click', function () {
+        $(this).next().toggleClass('active');
+      });
+    });
+  </script>
+-->
+
+</body>
+
+</html>

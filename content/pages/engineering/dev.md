@@ -1,19 +1,25 @@
-# Development Processes
+Title: Development Processes 
+Date: Tue 07 Sep 2021 20:56:10 AEST
+Category: Engineering 
+Tags: development,agile,sprints 
+Slug: dev 
+Authors: Ben Johnston 
+Summary: How we manage our work
 
-- [Development Processes](#development-processes)
-  - [Introduction](#introduction)
-  - [Agile Methodologies](#agile-methodologies)
-    - [Initiatives, Epics, Stories, Tasks and Spikes](#initiatives-epics-stories-tasks-and-spikes)
-    - [DE Team Ceremonies Explained](#de-team-ceremonies-explained)
-    - [Sprint Planning](#sprint-planning)
-    - [Daily Standup](#daily-standup)
-    - [Sprint Retrospective](#sprint-retrospective)
-    - [Backlog Refinement/Grooming](#backlog-refinementgrooming)
-    - [Story Points](#story-points)
-    - [Definitions of Done](#definitions-of-done)
-    - [Sprint Workflow](#sprint-workflow)
-  - [How to write a Story/Task](#how-to-write-a-storytask)
-  - [Support](#support)
+
+- [Introduction](#introduction)
+- [Agile Methodologies](#agile-methodologies)
+  - [Initiatives, Epics, Stories, Tasks and Spikes](#initiatives-epics-stories-tasks-and-spikes)
+  - [DE Team Ceremonies Explained](#de-team-ceremonies-explained)
+  - [Sprint Planning](#sprint-planning)
+  - [Daily Standup](#daily-standup)
+  - [Sprint Retrospective](#sprint-retrospective)
+  - [Backlog Refinement/Grooming](#backlog-refinementgrooming)
+  - [Story Points](#story-points)
+  - [Definitions of Done](#definitions-of-done)
+  - [Sprint Workflow](#sprint-workflow)
+- [How to write a Story/Task](#how-to-write-a-storytask)
+- [Support](#support)
 
 In this section of the handbook we outline our standard development processes i.e. "how" we work.  
 
@@ -77,10 +83,10 @@ When planning our work we use the agile concepts of Initiatives, Epics, Tasks an
 
 <table style="border: none;">
 <tr><td style="vertical-align: middle; border: none;"></td><td style="vertical-align: middle; border: none;"><strong>Initiatives</strong></td><td style="vertical-align: middle; border: none;">A collection of epics that contribute to a common goal; this is often, but not necessarily a specific software release.</td></tr>
-<tr><td style="vertical-align: middle; border: none;"><img src="epic.svg" alt="epic" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Epics</strong></td><td style="vertical-align: middle; border: none;">Larger bodies of work that can be broken down into smaller tasks; epics typically group a number of requirements into a logical body of work.</td></tr>
-<tr><td style="vertical-align: middle; border: none;"><img src="story.svg" alt="story" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Stories</strong></td><td style="vertical-align: middle; border: none;">A feature or requirement that may or may not have individual tasks that need to be done to satisfy the requirement.  A story can describe work to be done to more than one library/module in a code base.  Stories are often written from the perspective of an end user or the need defined in the feature / requirement.  "Story Points" are also applied to stories.</td></tr>
-<tr><td style="vertical-align: middle; border: none;"><img src="task.svg" alt="task" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Tasks</strong></td><td style="vertical-align: middle; border: none;">The piece of work that needs to be done.  Tasks require a measurable definition of done, "story point" estimates (really should be called task points....), a priority and ideally a completion or due date.  If appropriate tasks can be broken into <strong>Sub-Tasks</strong>; this is typically done if a ticket number is required for a discrete body of work and that work is still described within the original story point estimate.  It is usually preferred to create another related task as opposed to creating sub-tasks.</td></tr>
-<tr><td style="vertical-align: middle; border: none;"><img src="spike.svg" alt="spike" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Spikes</strong></td><td style="vertical-align: middle; border: none;">A piece of exploratory work, often used as a means of gathering requirements for a new set of tasks or to assist in determining a later action or path.  Spikes often have less clearly defined definitions of done, or the definition of done may be to create / inform later tasks.</td></tr>
+<tr><td style="vertical-align: middle; border: none;"><img src="{attach}epic.svg" alt="epic" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Epics</strong></td><td style="vertical-align: middle; border: none;">Larger bodies of work that can be broken down into smaller tasks; epics typically group a number of requirements into a logical body of work.</td></tr>
+<tr><td style="vertical-align: middle; border: none;"><img src="{attach}story.svg" alt="story" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Stories</strong></td><td style="vertical-align: middle; border: none;">A feature or requirement that may or may not have individual tasks that need to be done to satisfy the requirement.  A story can describe work to be done to more than one library/module in a code base.  Stories are often written from the perspective of an end user or the need defined in the feature / requirement.  "Story Points" are also applied to stories.</td></tr>
+<tr><td style="vertical-align: middle; border: none;"><img src="{attach}task.svg" alt="task" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Tasks</strong></td><td style="vertical-align: middle; border: none;">The piece of work that needs to be done.  Tasks require a measurable definition of done, "story point" estimates (really should be called task points....), a priority and ideally a completion or due date.  If appropriate tasks can be broken into <strong>Sub-Tasks</strong>; this is typically done if a ticket number is required for a discrete body of work and that work is still described within the original story point estimate.  It is usually preferred to create another related task as opposed to creating sub-tasks.</td></tr>
+<tr><td style="vertical-align: middle; border: none;"><img src="{attach}spike.svg" alt="spike" style="height:20px; vertical-align: bottom; border: none;"/></td><td style="vertical-align: middle; border: none;"><strong>Spikes</strong></td><td style="vertical-align: middle; border: none;">A piece of exploratory work, often used as a means of gathering requirements for a new set of tasks or to assist in determining a later action or path.  Spikes often have less clearly defined definitions of done, or the definition of done may be to create / inform later tasks.</td></tr>
 </table>
 
 ### DE Team Ceremonies Explained
@@ -203,7 +209,7 @@ We are good at comparing size, so estimating a story using Fibonacci series sequ
 
 In the below image are some examples of relative sizing and its estimation points to develop following vehicles: Difficulty could be related to complexities, risks, and efforts involved. Story points are a unit of measure for expressing an estimate of the overall effort that will be required to fully implement a product backlog item or any other piece of work.
 
-![](storypoint.png)
+![story points]({attach}storypoint.png)
 
 **Factors while estimating stories:**
 > - Complexity : Consider the complexity of the story.
@@ -280,7 +286,7 @@ The basic fundamentals of a story is that stories should be:
 
 Below is a screenshot of how a typical Jira ticket should look like when it is ready for estimation, without these mandatory fields surrounded by the red rectangle the team will not be able to accurately estimate the ticket:
 
-![](tickettemplate.png)
+![Ticket Template]({attach}tickettemplate.png)
 
 **Categories** - In front of the ticket summary field you will need to put into the brackets where will the main area be where this ticket belongs to. 
 
@@ -311,5 +317,5 @@ The team is also responsible to support our joint venture partners, the support 
 
 2. *“Normal” Ticket Support* will go through a ticket logging process. The requester will create a Support ticket and assign it to the appropriate person. These tickets will simply be in the line of a new item such as driver upgrades etc. that should require a ticket and planning from our side. We will make time in our daily stand-up to go through these tickets because they will also form part of our sprint planning/prioritization process.  **Important** every support ticket needs to have a description, as described above.  If the support ticket is describing a bug or outage please include the steps to replicate as well as the impact of the issue.
 
-![](supportticket.png)
+![support ticket]({attach}supportticket.png)
 
