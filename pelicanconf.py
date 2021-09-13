@@ -7,7 +7,7 @@ from collections import OrderedDict
 AUTHOR = 'harrison.ai Data Engineering Team'
 SITENAME = 'harrison.ai Data Engineering Handbook'
 SITEURL = ''
-THEME = '../pelican-theme'
+THEME = 'pelican-theme'
 
 PATH = 'content'
 PLUGINS = ['plugin']
