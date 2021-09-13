@@ -56,11 +56,10 @@ def get_toc(hmap, toc, site_url, level=0):
                     continue
                 msg = f"<li><a href=\"{site_url}/{_v['url']}\">{_v['title']}</a></li>"
                 toc.append(msg)
+            toc.append('</ul>')
 
         else:
             get_toc(v, toc, site_url, level + 1)
-
-        toc.append('</ul>')
 
 
 def func2(page_generator):
