@@ -77,7 +77,7 @@ MARKDOWN = {
             'marker': '[TableOfContents]',
             'title': 'Table of Contents',
             'anchorlink': True,
-            'permalink': True,
+            'permalink': False,
             'baselevel': 2,
         },
         'markdown.extensions.extra': {},

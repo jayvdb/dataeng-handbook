@@ -11,4 +11,5 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
-SITEURL = os.getenv('SITEURL', 'https://dataengineering.harrisonai.io')
+SITEURL = os.getenv('SITEURL')
+assert SITEURL is not None
