@@ -1,3 +1,4 @@
 [submodule "pelican-theme"]
 	path = pelican-theme
-	url = git@github.com:harrison-ai/pelican-theme.git
+	url = https://github.com/harrison-ai/pelican-theme.git
+	branch = main

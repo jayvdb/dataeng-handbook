@@ -13,6 +13,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          submodules: recursive
 
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -20,13 +23,8 @@ jobs:
       - name: Install requirements
         run: pip install -r requirements.txt
 
-      - name: Pull the theme
-        run: |
-          git submodule init 
-          git submodule update
-
       - name: Build the site
-        run: pelican content
+        run: make publish
 
       - name: Export to gh-pages
         run: ghp-import output -b gh-pages
@@ -35,4 +33,4 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git push gh-pages
+          git push origin gh-pages
