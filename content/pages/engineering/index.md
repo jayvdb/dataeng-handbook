@@ -12,4 +12,4 @@ The intent of this section is to standardise the way we work from an technical a
 * [Development Processes]({filename}dev.md)
 * [Source Control Processes]({filename}source.md)
 * Style Guides
-  * [Terraform]({filename}terraform.md)
+  * Terraform
