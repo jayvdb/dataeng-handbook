@@ -1,34 +1,38 @@
+Title: Source Control Processes 
+Date: Tue 07 Sep 2021 20:56:10 AEST
+Category: Development 
+Tags: development,git,PRs,engineering 
+Slug: source_control 
+Authors: Ben Johnston 
+Summary: How we use git 
 
-# Source Control Processes
-
-- [Source Control Processes](#source-control-processes)
-  - [Introduction](#introduction)
-  - [Branching Workflow](#branching-workflow)
-  - [Commit Messages](#commit-messages)
-    - [Anatomy of a Git Commit](#anatomy-of-a-git-commit)
-    - [Example Commit Messages](#example-commit-messages)
-  - [Pull Requests](#pull-requests)
-    - [Anatomy of a Pull Request](#anatomy-of-a-pull-request)
-      - [Title](#title)
-      - [Related Tasks](#related-tasks)
-      - [Depends on](#depends-on)
-      - [What](#what)
-      - [Why](#why)
-      - [Concerns](#concerns)
-      - [Notes](#notes)
-      - [Changes](#changes)
-  - [Approval Process](#approval-process)
-  - [Versioning & Tagging](#versioning--tagging)
-  - [References](#references)
+- [Introduction](#introduction)
+- [Branching Workflow](#branching-workflow)
+- [Commit Messages](#commit-messages)
+  - [Anatomy of a Git Commit](#anatomy-of-a-git-commit)
+  - [Example Commit Messages](#example-commit-messages)
+- [Pull Requests](#pull-requests)
+  - [Anatomy of a Pull Request](#anatomy-of-a-pull-request)
+    - [Title](#title)
+    - [Related Tasks](#related-tasks)
+    - [Depends on](#depends-on)
+    - [What](#what)
+    - [Why](#why)
+    - [Concerns](#concerns)
+    - [Notes](#notes)
+    - [Changes](#changes)
+- [Approval Process](#approval-process)
+- [Versioning & Tagging](#versioning--tagging)
+- [References](#references)
 
 ## Introduction
 
 The harrison.ai data engineering team uses [git](https://git-scm.com/) for source control management and employs the git flow workflow; if you are not familiar or need a refresher on git flow, this explanation by Atlassian [https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) is a useful reference.
 
-![](branches.svg)
-Source: [Atlassian gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+![branches.svg]({attach}branches.svg)
 
 Almost all of our git repositories consist of the following branch types:
+
 * **main**: is the production release branch that contains the code operating within the production environment.  With the exception of **hotfixes**, code can only reach the **main** branch following a pull request and by merging in from the **develop** or in some circumstances a **release** branch.
 * **develop**: is the deployment branch for the development environment.  The develop branch is used as a means of testing patches and features intended for release into the **main** branch.
 * **feature**: a branch created from **develop** that is used to develop and add new features to the code base.
@@ -89,15 +93,18 @@ A bullet point list
 ```
 
 The key features of the anatomy above are:
+
 * The JIRA (or Github) ticket reference.  This is used to ensure the commit is linked to the corresponding ticket and the current status of the task is automatically updated.
+
 * The type of the commit:
-  * **feat** for a new feature being added in the commit
-  * **fix** for a bug fix
-  * **refactor** no changes to the functionality have been made, but some aspect of the codebase has been refactored
-  * **test** any commits related to testing
-  * **docs** any commits that relate to documentation
-  * **chore** regular code maintenance e.g. dependency version bumps
-  * **revert** undo a previous commit 
+    * **feat** for a new feature being added in the commit
+    * **fix** for a bug fix
+    * **refactor** no changes to the functionality have been made, but some aspect of the codebase has been refactored
+    * **test** any commits related to testing
+    * **docs** any commits that relate to documentation
+    * **chore** regular code maintenance e.g. dependency version bumps
+    * **revert** undo a previous commit 
+
 * The sentence case summary, analogous to an email subject line provides the summary of the work done in the commit.  This line is to be no more than 50 characters long and does not end with a fullstop.
 * The blank line between the title and the body of the commit message is key for running tools like rebase, however it can be ommitted if the detailed summary text paragraph is not provided.
 * (Optional) Detailed summary paragraph(s), each beginning with Capitalisation.  This paragraph is intended to explain the changes made within the commit and why they were made.
@@ -106,6 +113,7 @@ The key features of the anatomy above are:
 * Written using Markdown
 
 In addition to the anatomy of the commit, when writing the message itself you should:
+
 * Use the imperative i.e. use "Fix bug" instead of "Fixed bug" or "Fixed bug"
 * Not assume the reader of the commit (or later pull request) has the same knowledge of the original problem being solved, ensure it is described within the message.
 * Not consider your code to be self-explanatory, context matters. 
@@ -309,6 +317,7 @@ In order to merge a branch into either *develop* or *master* a pull request must
 
 ## References
 The following books, articles, blogs were referenced in the creation of this content:
+
 * [https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
 * [https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/)
 * [https://maddevs.io/blog/how-to-make-a-proper-description-for-a-pull-request/](https://maddevs.io/blog/how-to-make-a-proper-description-for-a-pull-request/)

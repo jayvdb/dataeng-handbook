@@ -1,0 +1,39 @@
+name: Publish to GH Pages
+
+on:
+  push:
+    branches:
+      - "main"
+
+  workflow_dispatch:
+
+jobs:
+  publish:
+    environment: github-pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+
+      - name: Install requirements
+        run: pip install -r requirements.txt
+
+      - name: Build the site
+        run: make publish
+        env:
+          SITEURL: ${{ secrets.SITEURL }}
+
+      - name: Export to gh-pages
+        run: ghp-import output -b gh-pages
+
+      - name: Publish
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git push origin gh-pages
