@@ -3,7 +3,7 @@ Date: Tue 07 Sep 2021 20:56:10 AEST
 Category: Engineering 
 Tags: development,agile,sprints 
 Slug: dev 
-Authors: Ben Johnston 
+Author: Ben Johnston 
 Summary: How we manage our work
 
 

@@ -3,7 +3,7 @@ Date: Tue 07 Sep 2021 20:56:10 AEST
 Category: Development 
 Tags: development,git,PRs,engineering 
 Slug: source_control 
-Authors: Ben Johnston 
+Author: Ben Johnston 
 Summary: How we use git 
 
 - [Introduction](#introduction)

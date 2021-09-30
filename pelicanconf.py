@@ -74,11 +74,9 @@ RELATIVE_URLS = True
 MARKDOWN = {
     'extension_configs': {
         'markdown.extensions.toc': {
-            'marker': '[TableOfContents]',
-            'title': 'Table of Contents',
+            'marker': '[TOC]',
             'anchorlink': True,
             'permalink': False,
-            'baselevel': 2,
         },
         'markdown.extensions.extra': {},
         'markdown.extensions.fenced_code': {},

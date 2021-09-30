@@ -3,7 +3,7 @@ Date: Tue 14 Sep 2021 00:26:43 AEST
 Category: Engineering 
 Tags: engineering,terraform,infrastructure,cloud 
 Slug: aws_naming_conventions 
-Authors: Carl Hattingh 
+Author: Carl Hattingh 
 Summary: AWS Naming 
 Status: Draft
 

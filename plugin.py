@@ -45,7 +45,6 @@ def get_toc(hmap, toc, site_url, level=0):
                 msg += f"data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\""
                 msg += f">{_v['category']}</a>"
                 msg += f"<ul class=\"list-unstyled\" id=\"{_v['title'].replace(' ', '')}\">"
-                msg += f"<li><a href=\"{site_url}/{_v['url']}\">{_v['title']}</a></li>"
                 toc.append(msg)
 
             for _k in files:

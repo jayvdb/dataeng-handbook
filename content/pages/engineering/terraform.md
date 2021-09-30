@@ -3,7 +3,7 @@ Date: Tue 14 Sep 2021 00:26:43 AEST
 Category: Engineering 
 Tags: engineering,terraform,infrastructure 
 Slug: terraform 
-Authors: Carl Hattingh 
+Author: Carl Hattingh 
 Summary: Terraform Style Guide 
 Status: Draft
 

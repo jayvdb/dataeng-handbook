@@ -3,7 +3,7 @@ Date: Wed 08 Sep 2021 16:38:33 AEST
 Category: Home 
 Tags: Introduction, about 
 Slug: index 
-Authors: Ben Johnston 
+Author: Ben Johnston 
 Summary: How are we?
 save_as: index.html
 url: index.html
