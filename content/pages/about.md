@@ -18,8 +18,8 @@ The [harrison.ai](https://www.harrison.ai) data engineering team is currently co
 |    Shaun Roos     |      Delivery Manager      |
 |   Carl Hattingh   |  Lead Solutions Architect  |
 | Warren MacDougall | Senior Solutions Architect |
-|   *Now Hiring*    |  Senior Software Engineer  |
-|   *Now Hiring*    |  Senior Software Engineer  |
+|    Oliver Daff    |  Senior Software Engineer  |
+|    Ryan Kelly     |  Senior Software Engineer  |
 |   *Now Hiring*    |  Senior Software Engineer  |
 |   *Now Hiring*    | Senior Solutions Architect |
 |   *Now Hiring*    | Senior Solutions Architect |
