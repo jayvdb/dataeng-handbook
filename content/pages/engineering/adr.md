@@ -32,11 +32,21 @@ We understand that communicating the why is just as important as the how.  By us
 # ADR Structure
 The ADR contains eight sections:
 
+* Title
+* Status
+* Context
+* Decision
+* Alternatives
+* Consequences
+* Compliance
+* Notes 
+
 ### Title
 The title of the ADR is a sequentially numbered record and includes a short concise description of the architectural decision.
 
 ### Status
 The ADR can be in one of five states:
+
 *	RFC (Request for Change)
 *	Proposed
 *	Accepted
