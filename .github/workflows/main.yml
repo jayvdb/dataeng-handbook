@@ -37,6 +37,7 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           echo ${{ env.SITECNAME }} > CNAME
+          git add CNAME
           git commit --amend --no-edit
 
       - name: Publish
