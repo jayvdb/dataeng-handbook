@@ -32,8 +32,13 @@ jobs:
       - name: Export to gh-pages
         run: ghp-import output -b gh-pages
 
-      - name: Publish
+      - name: Update CNAME record
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
+          echo ${{ env.SITECNAME }} > CNAME
+          git commit --amend --no-edit
+
+      - name: Publish
+        run: |
           git push origin gh-pages
