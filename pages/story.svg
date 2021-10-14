@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="14"
+   height="14"
+   viewBox="0 0 14 14"
+   version="1.1"
+   id="svg14"
+   sodipodi:docname="story.svg"
+   inkscape:version="1.1 (ce6663b3b7, 2021-05-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+  <sodipodi:namedview
+     id="namedview16"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="54.5625"
+     inkscape:cx="6.9919817"
+     inkscape:cy="6.9919817"
+     inkscape:window-width="2560"
+     inkscape:window-height="1376"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg14" />
+  <!-- Generator: Sketch 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title2">story</title>
+  <desc
+     id="desc4">Created with Sketch.</desc>
+  <defs
+     id="defs6" />
+  <g
+     id="g12"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd"
+     sketch:type="MSPage"
+     transform="translate(-1,-1)">
+    <g
+       id="story"
+       sketch:type="MSArtboardGroup">
+      <g
+         id="Story"
+         sketch:type="MSLayerGroup"
+         transform="translate(1,1)">
+        <rect
+           id="Rectangle-36"
+           fill="#63ba3c"
+           sketch:type="MSShapeGroup"
+           x="0"
+           y="0"
+           width="14"
+           height="14"
+           rx="2" />
+        <path
+           d="M 9,3 H 5 C 4.448,3 4,3.448 4,4 v 6.5 C 4,10.776 4.224,11 4.5,11 4.675,11 4.821,10.905 4.91,10.769 L 4.914,10.77 6.84,8.54 c 0.08,-0.106 0.24,-0.106 0.32,0 L 9.086,10.77 9.09,10.769 C 9.179,10.905 9.325,11 9.5,11 9.776,11 10,10.776 10,10.5 V 4 C 10,3.448 9.552,3 9,3"
+           id="Page-1"
+           fill="#ffffff"
+           sketch:type="MSShapeGroup" />
+      </g>
+    </g>
+  </g>
+  <metadata
+     id="metadata18">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>story</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

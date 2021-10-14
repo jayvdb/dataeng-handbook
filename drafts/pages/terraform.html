@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>harrison.ai Data Engineering Handbook - Terraform Style Guide</title>
+  <meta name="author" content="harrison.ai Data Engineering Team">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="top" href="#" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../theme/css/base.css" type="text/css" />
+  <link rel="stylesheet" href="../../theme/css/style.css" type="text/css" />
+
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <a href="/"><img src="../../theme/images/icons/Harrison-AI_Logo-Stack_White_RGB.svg"
+            alt="" height="100" class="align: center; d-inline-block align-text-middle"></a>
+      </div>
+
+      <p style="text-align: center;"><strong>Data Engineering Handbook</strong></p>
+
+
+      <nav class="pages">
+
+        <ul class="list-unstyled components">
+          <li class="active">
+            <a href="dataengineering.harrisonai.io/index.html" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a><ul class="list-unstyled" id="Welcome">
+            <li><a href="dataengineering.harrisonai.io/pages/about.html">About Us</a></li>
+            </ul>
+            <a href="dataengineering.harrisonai.io/pages/engineering.html" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Engineering</a><ul class="list-unstyled" id="Introduction">
+            <li><a href="dataengineering.harrisonai.io/pages/adr.html">Architecture Decision Records</a></li>
+            <li><a href="dataengineering.harrisonai.io/pages/dev.html">Development Processes</a></li>
+            <li><a href="dataengineering.harrisonai.io/pages/source_control.html">Source Control Processes</a></li>
+            </ul>
+            </ul>
+          </li>
+        </ul>
+
+      </nav>
+
+  </div>
+  <div id="content" class="container-fluid">
+
+    <h1>Terraform Style Guide</h1>
+    
+
+    <p><a href="{filename}aws_naming_conventions.html">AWS Naming Conventions</a></p>
+<h2 id="general"><a class="toclink" href="#general">General</a></h2>
+<ul>
+<li>Use environments in discrete folders, not workspaces, to separate environments</li>
+<li>Use symlinks wherever possible to avoid repetition.</li>
+<li>Repos should use the 3 Musketeers Pattern, https://3musketeers.io/docs/patterns.html</li>
+<li>Backend:</li>
+<li>S3 with optional DynamoDB locking</li>
+<li>Stored in same account as deployed infrastructure</li>
+<li>Terraform State key naming convention: <code>&lt;repo&gt;/&lt;stage&gt;/&lt;environment&gt;/tfstate</code></li>
+</ul>
+<h3 id="terraform-syle-guide"><a class="toclink" href="#terraform-syle-guide">Terraform Syle Guide</a></h3>
+<h3 id="resource-and-data-source-arguments"><a class="toclink" href="#resource-and-data-source-arguments">Resource and data source arguments</a></h3>
+<p>Do not repeat resource type in resource (not partially, nor completely):</p>
+<p><strong>Good:</strong></p>
+<pre><code>resource &quot;aws_route_table&quot; &quot;public&quot; {}
+</code></pre>
+<p><strong>Bad:</strong></p>
+<pre><code>resource &quot;aws_route_table&quot; &quot;public_route_table&quot; {}
+</code></pre>
+<p><strong>Bad:</strong></p>
+<pre><code>resource &quot;aws_route_table&quot; &quot;public_aws_route_table&quot; {}
+</code></pre>
+<ol>
+<li>
+<p>Resources name should be named <strong>this</strong> if there is no more descriptive and general name available, or if resource module creates a 
+single resource of this type (e.g, there is a single resource of type <strong>aws_nat_gateway</strong> and multiple resources of type <strong>aws_route_table</strong>, 
+so <strong>aws_nat_gateway</strong> should be named this and <strong>aws_route_table</strong> should have more descriptive names - like <strong>private</strong>, <strong>public</strong>, <strong>database</strong>).</p>
+</li>
+<li>
+<p>Always use singular nouns for names.</p>
+</li>
+<li>
+<p>Use - inside argument values and in places where the value will be exposed to a human (e.g inside the DNS name of an RDS instance).</p>
+</li>
+<li>
+<p>Include the count argument inside resource blocks as the first argument at the top and separate it by a newline after it.</p>
+</li>
+</ol>
+<p><strong>Good:</strong></p>
+<pre><code>resource &quot;aws_route_table&quot; &quot;public&quot; {
+  count = 2
+
+  vpc_id = &quot;vpc-12345678&quot;
+  # ... remaining arguments omitted
+}
+
+**Bad:**
+
+
+resource &quot;aws_route_table&quot; &quot;public&quot; {
+  vpc_id = &quot;vpc-12345678&quot;
+  count = 2
+
+  # ... remaining arguments omitted
+}
+</code></pre>
+<p>Include the <strong>tags</strong> argument, if supported by the resource as the last real argument, followed by <strong>depends_on</strong> and <strong>lifecycle</strong>, if necessary. 
+All of these should be separated by a single empty line.</p>
+<p><strong>Good:</strong></p>
+<pre><code>resource &quot;aws_nat_gateway&quot; &quot;this&quot; {
+  count         = 1
+
+  allocation_id = &quot;...&quot;
+  subnet_id     = &quot;...&quot;
+
+  tags = {
+    Name = &quot;...&quot;
+  }
+
+  depends_on = [aws_internet_gateway.this]
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+</code></pre>
+<p><strong>Bad:</strong></p>
+<pre><code>resource &quot;aws_nat_gateway&quot; &quot;this&quot; {
+  count = 1
+
+  tags = &quot;...&quot;
+
+  depends_on = [aws_internet_gateway.this]
+
+  lifecycle {
+    create_before_destroy = true
+  }
+
+  allocation_id = &quot;...&quot;
+  subnet_id     = &quot;...&quot;
+}
+
+</code></pre>
+<p>When using conditions in the <strong>count</strong> argument use a boolean value, if it makes sense, otherwise use <strong>length</strong> or another interpolation.</p>
+<pre><code>  count = length(var.public_subnets) &gt; 0 ? 1 : 0
+  count = var.create_vpc ? 1 : 0
+</code></pre>
+<h2 id="variables"><a class="toclink" href="#variables">Variables</a></h2>
+<ol>
+<li>
+<p>Don't reinvent the wheel in resource modules - use the same variable names, description and default as defined in "Argument Reference" 
+   section for the resource you are working on.</p>
+</li>
+<li>
+<p>Omit <strong>type = "list"</strong> declaration if there is <strong>default = []</strong> also.</p>
+</li>
+<li>
+<p>Omit <strong>type = "map"</strong> declaration if there is <strong>default = {}</strong> also.</p>
+</li>
+<li>
+<p>Use the plural form in name of variables of type <strong>list</strong> and <strong>map</strong>.</p>
+</li>
+<li>
+<p>When defining variables order the keys: <strong>description</strong>, <strong>type</strong>, <strong>default</strong>.</p>
+</li>
+<li>
+<p>Always include a description for all variables even if you think it is obvious.</p>
+</li>
+</ol>
+<h2 id="outputs"><a class="toclink" href="#outputs">Outputs</a></h2>
+<p>Names for outputs are important to make them consistent and understandable outside of its scope (when
+a user is using a module it should be obvious what type and the attribute of the value that is returned).</p>
+<ol>
+<li>
+<p>The general recommendation for the names of outputs is that it should be descriptive for the value it 
+   contains and be less free-form than you would normally want.</p>
+</li>
+<li>
+<p>A good structure for names of output looks like <strong>{name}_{attribute}</strong>, where:
+   <strong>{name}</strong> is a resource or data source name without provider prefix. <strong>{name}</strong> for <strong>aws_subnet</strong> is <strong>subnet</strong>,<br />
+   for <strong>aws_vpc</strong> it is <strong>vpc</strong> and <strong>{attribute}</strong> is the attribute returned by the output</p>
+</li>
+<li>
+<p>If the output is returning a value with interpolation functions and multiple resources, the <strong>{name}</strong> and <strong>{attribute}</strong> there should be as generic as possible
+   (this is often the most generic and should be preferred).</p>
+</li>
+<li>
+<p>If the returned value is a list it should have a plural name.</p>
+</li>
+<li>
+<p>Always include a description for all outputs even if you think it is obvious.</p>
+</li>
+</ol>
+<h2 id="git-repo-directory-structure"><a class="toclink" href="#git-repo-directory-structure">Git Repo directory structure:</a></h2>
+<p>(incomplete)
+(see also cookiecutter)</p>
+<pre><code>.
+├── .env
+├── .gitignore
+├── Makefile
+├── docker-compose.yml
+├── envvars.yml
+└── tf
+    ├── modules
+    │   └── module-one
+    │       ├── main.tf
+    │       ├── outputs.tf
+    │       └── variables.tf
+    ├── stage-one
+    │   ├── dev
+    │   └── prod
+    └── stage-two
+        ├── dev
+        └── prod
+</code></pre>
+
+
+    <footer>
+
+
+
+      <p role="contentinfo">
+        © 2021 harrison-ai Pty Ltd. Proudly powered by <a href="https://docs.getpelican.com/en/latest/">pelican</a>
+      </p>
+
+  </div>
+
+  <!-- </div> -->
+
+  <!-- </div> -->
+  <!-- jQuery CDN -->
+  <!-- <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> -->
+  <!-- Bootstrap Js CDN -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+  <!-- <script type="text/javascript">
+    $(document).ready(function () {
+      $('.dropdown-toggle').on('click', function () {
+        $(this).next().toggleClass('active');
+      });
+    });
+  </script>
+-->
+
+</body>
+
+</html>
