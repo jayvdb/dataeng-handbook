@@ -36,11 +36,11 @@ jobs:
         run: |
           rm -rf pelican-theme
           git checkout gh-pages
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          echo ${{ env.SITECNAME }} > CNAME
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          echo ${{ secrets.SITEURL }} > CNAME
           git add CNAME
-          git commit --amend --no-edit
+          git commit -m "feat: Add CNAME"
 
       - name: Publish
         run: |
