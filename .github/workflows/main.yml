@@ -38,9 +38,9 @@ jobs:
           git checkout gh-pages
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          echo ${{ secrets.SITEURL }} > CNAME
+          echo ${{ secrets.SITEURL }} > CNAME         
           git add CNAME
-          git commit --amend --no-edit
+          git commit -m "feat: Add CNAME"
 
       - name: Publish
         run: |
