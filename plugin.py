@@ -58,14 +58,14 @@ def get_toc(hmap, toc, site_url):
                 continue
 
             if page['filename'] == 'index.md':
-                msg = f"<a href=\"{page['url']}\" "
+                msg = f"<a href=\"./{page['url']}\" "
                 msg += "data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\""
                 msg += f">{page['category']}</a>"
                 msg += f"<ul class=\"list-unstyled\" id=\"{page['title'].replace(' ', '')}\">"
                 toc.append(msg)
 
             else:
-                msg = f"<li><a href=\"{page['url']}\">{page['title']}</a></li>"
+                msg = f"<li><a href=\"./{page['url']}\">{page['title']}</a></li>"
                 toc.append(msg)
 
         toc.append('</ul>')
