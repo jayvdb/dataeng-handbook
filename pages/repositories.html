@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>harrison.ai Data Engineering Handbook - Managing Git Repositories</title>
+  <meta name="author" content="harrison.ai Data Engineering Team">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="top" href="#" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../theme/css/base.css" type="text/css" />
+  <link rel="stylesheet" href="../theme/css/style.css" type="text/css" />
+
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <a href="/"><img src="../theme/images/icons/Harrison-AI_Logo-Stack_White_RGB.svg"
+            alt="" height="100" class="align: center; d-inline-block align-text-middle"></a>
+      </div>
+
+      <p style="text-align: center;"><strong>Data Engineering Handbook</strong></p>
+
+
+      <nav class="pages">
+
+        <ul class="list-unstyled components">
+          <li class="active">
+            <a href="dataengineering.harrisonai.io/index.html" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a><ul class="list-unstyled" id="Welcome">
+            <li><a href="dataengineering.harrisonai.io/pages/about.html">About Us</a></li>
+            </ul>
+            <a href="dataengineering.harrisonai.io/pages/engineering.html" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Engineering</a><ul class="list-unstyled" id="Introduction">
+            <li><a href="dataengineering.harrisonai.io/pages/adr.html">Architecture Decision Records</a></li>
+            <li><a href="dataengineering.harrisonai.io/pages/dev.html">Development Processes</a></li>
+            <li><a href="dataengineering.harrisonai.io/pages/repositories.html">Managing Git Repositories</a></li>
+            <li><a href="dataengineering.harrisonai.io/pages/source_control.html">Source Control Processes</a></li>
+            </ul>
+            </ul>
+          </li>
+        </ul>
+
+      </nav>
+
+  </div>
+  <div id="content" class="container-fluid">
+
+    <h1>Managing Git Repositories</h1>
+    
+
+    <ul>
+<li><a href="#context">Context</a></li>
+<li><a href="#repo-naming-convention">Repo Naming Convention</a></li>
+<li><a href="#examples">Examples</a></li>
+<li><a href="#creating-new-repositories">Creating New Repositories</a><ul>
+<li><a href="#metadata-files">Metadata Files</a></li>
+</ul>
+</li>
+<li><a href="#semantic-versioning">Semantic Versioning</a></li>
+</ul>
+<p><img src="../pages/git.png" style="height: 50px"></p>
+<p>This page outlines the procedures and conventions for creating new repositories (repos) within the harrison.ai data engineering team.
+The goals of this document are:</p>
+<ol>
+<li>Allow the location of features, components, specifications or definitions to be intuitive or almost obvious.<br />
+It should not be hard to find where infrastructure is defined
+or where software components live.</li>
+<li>Provide a faster on-boarding / navigation process for new engineers in the team.</li>
+<li>Minimise the number of repositories in existence with the aim of reducing maintenance burden. 
+Repo proliferation can make code hard to find, leads to more links between repos and 
+thus makes them harder to maintain.
+Conversely adding unrelated work / items together in the one repo also leads to confusion
+so it is key to strike the right balance.</li>
+<li>Easier to deploy, document and manage infrastructure and software components.  If there
+are fewer sources for deployment, deployment will be easier.  We need to ensure the repo
+convention supports our build, documentation and dependency management processes.</li>
+<li>Make collaboration easier and more effective.</li>
+<li>Ensure the repo structure aligns with the roles and responsibilities of the components
+that they store.</li>
+</ol>
+<p>If we are able to define an effective repo naming convention and creation procedure we hope
+we will be able to achieve these goals.</p>
+<h2 id="context"><a class="toclink" href="#context">Context</a></h2>
+<p>In order to determine an effective set of conventions the underlying context in which this 
+work will reside needs to be described.  As follows:</p>
+<ol>
+<li>The data engineering team is one team within the harrison.ai organisation that uses git 
+as a method of version control.</li>
+<li><strong>Github</strong> is the current git platform of choice and the processes and decisions being
+made need to work within this platform.</li>
+<li>Within the data engineering team there are two main technical specialities: software
+engineering and infrastructure.  There is a logical separation between these two
+on the basis of technology usage but obviously collaboration between software and infrastructure
+is required for the team to be effective.</li>
+<li>The data engineering team while primarily building one main internal product, do support
+other projects within the organisation.</li>
+<li>Within the main internal project there are separate components that have their own
+roles and responsibilities as well as defined interfaces.  These components are assigned owner(s) who
+are primarily responsible for their development.  Members of the data 
+engineering team may at one time work on a number of different components in the system
+and will also work on components for which they are not an owner.</li>
+</ol>
+<h2 id="repo-naming-convention"><a class="toclink" href="#repo-naming-convention">Repo Naming Convention</a></h2>
+<p>Newly created git repositories for product development purposes will be created
+using the following naming convention.  There are some repos which are used for 
+other purposes, such as 1:1 notes and this handbook.  These repos should adhere
+to this convention as much as possible.</p>
+<p>The structure is as follows:</p>
+<p><code>
+{<strong>department</strong>}-{<strong>project</strong>}-{<strong>service</strong>}[-{<strong>type</strong>}][-{<strong>subcomponent</strong>}]
+</code></p>
+<p>Where:</p>
+<ul>
+<li><strong>department</strong>: specifies the department within harrison.ai for the data
+engineering team this will be <strong>dataeng</strong></li>
+<li><strong>project</strong>: specifies the project for which the repo belongs and will be
+the agreed upon project name / acronym.  If the project being worked on is the
+datalake the project name could be <em>lake</em> or <em>datalake</em> or <em>dlake</em>.  This
+convention does not describe how projects are named or the specifics of this value;
+this value is to be agreed upon at the start of the project.</li>
+<li><strong>service</strong>: specifies the system level component or microservice that the contents of the repo
+belongs to.  This choice is particularly important as it aligns with the roles
+and responsibilities of the component owner(s).  It is the component owner(s) that
+have decision making responsibilities within that repository. </li>
+<li><strong>type</strong> (optional): this specifies the repo type which also aligns with the technical specialities
+within the team.  This is optional as when starting a service or project it may 
+be easier to combine some of the types into one repository; where they may be split out
+at a later date.
+Currently the value of type will be either:<ul>
+<li><strong>app</strong>: for application code such as Rust, Python or a combination of source code</li>
+<li><strong>infra</strong>: for infrastructure code such as Terraform and/or Ansible.</li>
+<li><strong>lib</strong>: for code for libraries or dependencies</li>
+<li><strong>docs</strong>: if relevant dedicated documentation can be stored here 
+  more then one </li>
+</ul>
+</li>
+<li><strong>subcomponent</strong> (optional): this is an optional value in the name and is reserved
+for use in the event that additional granularity is required.  If it is not required
+feel free to end the name after the <strong>component</strong>.</li>
+</ul>
+<h3 id="examples"><a class="toclink" href="#examples">Examples</a></h3>
+<p>Say we had a component that is to provide public API capabilities for a datalake which
+has the project name <em>dlake</em>, we could have three separate repositories:</p>
+<p><code>
+<strong>dataeng</strong>-<strong>dlake</strong>-<strong>api</strong></p>
+<p><strong>dataeng</strong>-<strong>dlake</strong>-<strong>api</strong>-<strong>app</strong></p>
+<p><strong>dataeng</strong>-<strong>dlake</strong>-<strong>api</strong>-<strong>infra</strong>
+</code></p>
+<p>The first repo name <code>dataeng-dlake-api</code> is an example of a repo created at the start of the
+<em>dlake</em> project and contains both the infrastructure and application code in the one repo
+similarly to
+<a href="https://github.com/harrison-ai/dataeng-handbook-docs-examplerepo">dataeng-handbook-docs-examplerepo</a>.
+This repo defines the <em>api</em> service in the <em>dlake</em> project.</p>
+<p>The remaining example repo names show how the application code and infrastructure defining
+the <em>api</em> service can be split, using the <strong>app</strong> and <strong>infra</strong> types. </p>
+<p>In the event that there are some common or shared components that need to be used throughout
+a number of different components this could be specified using the <strong>service</strong> part of the
+naming convention.  Say a number of different components all wanted to use the same
+authentication and authorisation mechanism we could use the following as an example:</p>
+<p><code>
+<strong>dataeng</strong>-<strong>dlake</strong>-<strong>auth</strong></p>
+<p><strong>dataeng</strong>-<strong>dlake</strong>-<strong>auth</strong>-<strong>app</strong></p>
+<p><strong>dataeng</strong>-<strong>dlake</strong>-<strong>auth</strong>-<strong>infra</strong>
+</code></p>
+<p>When creating repos for common components, consideration should be given to potential coupling
+between the shared or common components and other services.  Strong coupling between independent
+components should be avoided where possible as to avoid the separation of responsibilities and
+concerns.</p>
+<h2 id="creating-new-repositories"><a class="toclink" href="#creating-new-repositories">Creating New Repositories</a></h2>
+<p>To minimise the number of repositories being generated we need to be considered and
+thoughtful about the reasons for why we are looking to create a new repo.  There are 
+a couple of reasons where it is obvious that a new repository is to be generated, 
+including potential forks for new repos.</p>
+<ol>
+<li>A new project is being generated and nothing currently exists</li>
+<li>A new component is required for an existing product</li>
+</ol>
+<p>In both of these cases, repos should be created following the initial architecture
+design of a project.  This ensures the definition of components and the general
+roles and responsibilities amongst the components are defined.  In the event that
+a new component is added to an existing project a new repo should only be created
+once the project teams has agreed that the component is required and an 
+owner has been assigned to that team.</p>
+<p>If the roles and responsibilities of the individual components is appropriately 
+architected and well defined then it should be clear in almost all instances which 
+repo would be appropriate for any new feature.  In the event that this is not the 
+case, consideration should be given to the existing components, code owners and repos first.
+If a component and repo does exist that is a reasonable fit for the new feature then
+the feature should belong in that repo; if not a brief architecture review should be completed
+prior to creating a new repo for the feature.</p>
+<p><img alt="creating_a_repo" src="../pages/creatingarepo.png" /></p>
+<p>The above diagram refers to a repository register as a means of storing information regarding
+repository owners, development / maintenance status of a repo as well as related repos.</p>
+<h4 id="metadata-files"><a class="toclink" href="#metadata-files">Metadata Files</a></h4>
+<p>Irrespective of the selected language or technology each repo should contain the following 
+metadata files to describe information <em>about</em> the repo:</p>
+<p><strong>README</strong></p>
+<p>The front page of the repo, written in Markdown the <code>README.md</code> provides an introduction
+to, and explains the content of the repo.  This file may also contain initial setup /
+development instructions.  For information on how to write a good <code>README</code> refer to
+<a href="https://www.makeareadme.com/">makeareadme.com</a>.</p>
+<p>💡<strong>TIP</strong> <a href="https://shields.io/">Shields</a> provide READMEs with an interactive means
+of updating information such as build results, documentation availability, versions and many more.</p>
+<p><strong>CODEOWNERS</strong></p>
+<p>The <code>CODEOWNERS</code> file in github projects is to be used to specify the
+owner(s) of the repo and ensure that the owners are automatically added to
+code reviews.  Not that this does not apply to draft pull requests.
+In addition to the component owners, the relevant data-engineering team(s) 
+are to be added to the <code>CODEOWNERS</code> file as well.</p>
+<p><strong>CHANGELOG.md</strong></p>
+<p>"Friends don't make friends read commit histories" Changelogs provide a useful and handy
+reference tracking changes in a repo.  <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>
+provides a useful reference for writing good changelogs.  This file is intended
+to be written manually and is a distilled version of the effort, features and fixes that have gone into
+a release.</p>
+<p><strong>.gitignore</strong></p>
+<p>The <code>.gitignore</code> file is used to indicate to git which files can be ignored by
+the version control system. </p>
+<p><strong>Editor configuration files</strong></p>
+<p>To ensure consistency in formatting and tooling between engineers working on the same
+repo it is recommended that configuration files such as <strong>.editorconfig</strong> or settings 
+be included or committed.  The VScode settings file in <code>.vscode</code> can be useful to ensure
+everyone working on a repo has the same settings and environment. </p>
+<h2 id="semantic-versioning"><a class="toclink" href="#semantic-versioning">Semantic Versioning</a></h2>
+<p>All code bases, irrespective of the application, component, technology or specialisation will
+use <a href="https://semver.org/">Semantic Versioning</a>.  Versions are typically applied to a code base
+through the use of git tags, though other mechanisms may be used to integrate the version 
+into the base e.g. use of <a href="https://github.com/python-versioneer/python-versioneer">Versioneer</a>
+to build Python wheels, attaching the version from the value of the git tag as the metadata.</p>
+
+
+    <footer>
+
+
+
+      <p role="contentinfo">
+        © 2021 harrison-ai Pty Ltd. Proudly powered by <a href="https://docs.getpelican.com/en/latest/">pelican</a>
+      </p>
+
+  </div>
+
+  <!-- </div> -->
+
+  <!-- </div> -->
+  <!-- jQuery CDN -->
+  <!-- <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> -->
+  <!-- Bootstrap Js CDN -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+  <!-- <script type="text/javascript">
+    $(document).ready(function () {
+      $('.dropdown-toggle').on('click', function () {
+        $(this).next().toggleClass('active');
+      });
+    });
+  </script>
+-->
+
+</body>
+
+</html>
