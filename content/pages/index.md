@@ -14,5 +14,6 @@ Welcome to the [harrison.ai](https://harrison.ai) Data Engineering Handbook.  Th
 
 * [About Us]({filename}about.md)
 * [Engineering]({filename}engineering/index.md)
+  * [Architecture Decision Records]({filename}engineering/adr.md)
   * [Development Processes]({filename}engineering/dev.md)
   * [Source Control Processes]({filename}engineering/source.md)
