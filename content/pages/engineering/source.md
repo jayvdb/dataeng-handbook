@@ -22,59 +22,57 @@ Summary: How we use git
     - [Notes](#notes)
     - [Changes](#changes)
 - [Approval Process](#approval-process)
-- [Versioning & Tagging](#versioning--tagging)
+- [Merging](#merging)
+- [Versioning, Tagging and Deployment](#versioning-tagging-and-deployment)
+- [Hotfixes](#hotfixes)
 - [References](#references)
 
 ## Introduction
 
-The harrison.ai data engineering team uses [git](https://git-scm.com/) for source control management and employs the git flow workflow; if you are not familiar or need a refresher on git flow, this explanation by Atlassian [https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) is a useful reference.
+The harrison.ai data engineering team uses [git](https://git-scm.com/) for source control management,
+employing a trunk-based development workflow and pull-requests for code review in a style similar
+to [the GitHub recommended flow](https://guides.github.com/introduction/flow/).
 
-![branches.svg]({attach}branches.svg)
+Key aspects of the workflow include:
 
-Almost all of our git repositories consist of the following branch types:
-
-* **main**: is the production release branch that contains the code operating within the production environment.  With the exception of **hotfixes**, code can only reach the **main** branch following a pull request and by merging in from the **develop** or in some circumstances a **release** branch.
-* **develop**: is the deployment branch for the development environment.  The develop branch is used as a means of testing patches and features intended for release into the **main** branch.
-* **feature**: a branch created from **develop** that is used to develop and add new features to the code base.
-* **bugfix**: a branch created from **develop** that is used to implement fixes to reported issues. 
-* **hotfix**: hotfix branches created from the **master** branch are used for fixes that must be quickly applied to production code.  Once these branches are merged into master, a merge from **master** into **develop** is also required.
-
-Currently the data engineering team does not employ a dedicated **release** branch, due to the size of the team working on the code base and the desire for fast feedback cycles with production. 
+* The **`main`** branch is always ready for release or deploy; any code that lands on **`main`** has
+  already been reviewed, tested and documented to our high quality standards.
+* Releases and deploys are triggered by creating git tags from **`main`**, and are managed by
+  our CI/CD infrastructure. Tags follow semantics versioning.
+* Work is performed in short-lived feature branches and submitted via pull request, which
+  must receive an approving review before being merged to **`main`**. Branch naming conventions
+  help us use automated tools to organize our work.
 
 ## Branching Workflow 
 
-When working on a development task, the first step is to create an appropriate branch within the correct code repository.  To ensure **the newly created branch is up to date** it is recommended that the branch
-be created from the interface of the central repository e.e. github.  If you are creating the branch from a local version of the repo, you must **ensure you fetch the latest updates first**.  Whichever method is used, ensure you
-are branching from **develop** with the exception of **hotfix** braanches which are created from **main**.
+When working on a development task, the first step is to create an appropriate branch within the correct code repository.  To **ensure the newly created branch is up to date** it is recommended that the branch
+be created from the interface of the central repository e.g. github.  If you are creating the branch from a local version of the repo, you must **ensure you fetch the latest updates first**.
 
-The following naming convention is to be used when creating new branches:
+The following naming convention is used when creating new branches:
 
-> **BRANCH TYPE/TASK REFERENCE**
+> **`[BRANCH TYPE]/[TASK REFERENCE]-[OPTIONAL DESCRIPTION]`**
 
-where **BRANCH TYPE** is one of:
+where **`[BRANCH TYPE]`** is one of:
 
 * feature
-* bugfix
-* hotfix
+* fix
+* chore
 
-and the **TASK REFERENCE** is the task or ticket number created from Jira.
+and the **`[TASK REFERENCE]`** is the task or ticket number created from Jira.
 
 Examples:
 
-> feature/PRO-123
->
-> bugfix/FOO-1024
->
-> hotfix/BAR-785
+* `feature/PRO-123`
+* `fix/FOO-1024-validation-bug`
+* `chore/BAR-785-update-barification-docs`
 
 The intent behind this naming convention is that when looking at pull requests or a list of branches for a repository their context can be easily determined by the branch type and more detailed information such as 
 the definition of done can be obtained by referring to the corresponding Jira ticket.  This is particularly useful for reviewers of pull requests to ensure the branch meets the requirements of the definition of done.
-If setup correctly, Jira will also automatically update the status of the branch within the ticket itself, indicating if a PR (pull request) has been created or even merged.Once you have committed your patch to the branch a pull request is then created, to merge the patch into the original source branch with the name of the branch in the title.
-
+If setup correctly, Jira will also automatically update the status of the branch within the ticket itself, indicating if a PR (pull request) has been created or even merged. Once you have committed your patch to the branch a pull request is then created, to merge the patch into the original source branch with the name of the branch in the title.
 
 ## Commit Messages
 
-Writing clear and meaningful commit messages are a particularly important part of the development process, as they form both a record of the work that has been completed that can be used for later reference, help in communicating with readers or reviewers of your code as well as help to structure the work itself.  By establishing a common commit message format, reading pull requests and commit logs will become a lot easier and more straight forward.  
+Writing clear and meaningful commit messages is a particularly important part of the development process, as they form both a record of the work that has been completed that can be used for later reference, help in communicating with readers or reviewers of your code as well as help to structure the work itself.  By establishing a common commit message format, reading pull requests and commit logs will become a lot easier and more straight forward.  
 
 ### Anatomy of a Git Commit
 
@@ -94,7 +92,7 @@ A bullet point list
 
 The key features of the anatomy above are:
 
-* The JIRA (or Github) ticket reference.  This is used to ensure the commit is linked to the corresponding ticket and the current status of the task is automatically updated.
+* The JIRA (or GitHub) ticket reference.  This is used to ensure the commit is linked to the corresponding ticket and the current status of the task is automatically updated.
 
 * The type of the commit:
     * **feat** for a new feature being added in the commit
@@ -137,7 +135,7 @@ While this seems like a lot to think about for a simple commit message, getting 
 💡 **TIP** Tools such as [commitzen](https://commitizen-tools.github.io/commitizen/) can make creating commit messages a lot easier and in the future this may become a part of our standard toolkit.
 
 ## Pull Requests
-As good commit messages help to communicate the additional context as to how and why changes were made to a code base, Pull Requests (PRs) also form an important part of this process.  PRs are a key part of developing quality software as they provide a means of:
+Just as good commit messages help to communicate the additional context as to how and why changes were made to a codebase, Pull Requests (PRs) also form an important part of this process.  PRs are a key part of developing quality software as they provide a means of:
 
 * ensuring the committed code achieves the desired result
 * checking that additional bugs or security vulnerabilities are not introduced to the code base
@@ -310,10 +308,61 @@ docs: Update API documentation for json export # JIRA-123
 ```
 ## Approval Process 
 
-In order to merge a branch into either *develop* or *master* a pull request must be approved by at least one, preferably two subject matter experts.  These constraints are to be configured at the repository level to ensure a merge cannot be committed without appropriate approval.  The review process, while checking the code satisfies the requirements of the ticket should also ensure that the code adheres to any relevant style guides, as well as the various formatting described within this page.  When executing the merge the commits should be squashed for readability.
+In order to merge a branch into **`main`** a pull request must be approved by at least one, preferably two component owners.  These constraints are to be configured at the repository level to ensure a merge cannot be committed without appropriate approval.  The review process, while checking the code satisfies the requirements of the ticket should also ensure that the code adheres to any relevant style guides, as well as the various formatting described within this page.
 
-## Versioning & Tagging
-🚧 Coming Soon
+## Merging 
+
+When a PR has received the necessary approvals, the submitter merges it to
+the **`main`** branch.
+
+GitHub's "squash and merge" feature is the preferred merge mechanism, as it 
+combines any fixes from review comments into a single commit and automatically
+includes a references to the PR number. When multiple commits are being squashed,
+take a few moments to edit the final commit message to reflect the "good commit
+guidelines" above, and ensure that it contains a refernces to the corresponding
+Jira ticket if any.
+
+Merge commits are discouraged, and should only be created when we expect to merge
+multiple times from the same branch (such as when merging changes from a public
+repository into a private fork).
+
+## Versioning, Tagging and Deployment
+
+To make code available for deployment or consumption by other services,
+we make a new git tag from the **`main`** branch. Tags follow the format
+and semantics of [Semantic Version 2.0.0](https://semver.org/)
+(although the exact details of what constitutes the versioned API surface
+may vary between repositories).
+
+Cutting a new tag automatically triggers our CI/CD system to begin a deployment
+to production, as appropriate for the repo.
+
+## Hotfixes
+
+We aim to avoid hotfix deployments s much as possible. The preferred way to get
+both fixes and features into production is via an ordinary release from latest
+**`main`**.
+
+ However, since we may have different consumers running different versions of our
+software in their own production environments, it could be necessary to deploy
+a hotfix based on some earlier tagged version of the code rather than on latest
+**`main`**.
+
+If needed, we create hotfix releases by working on a separate release branch
+as follows:
+
+* If one does not already exist, create a new branch named `release-X.Y` based
+  an existing `X.Y.Z` release tag.
+* Develop the fix as a PR to the `release-X.Y` branch, following the processes
+  above.
+* Tag a new release `X.Y.(Z+1)` from the `release-X.Y` branch, which will be
+  picked up by our CI/CD system to begin a deployment to production.
+
+Trunk-based workflows seem to favour treating these like any other PR - make the
+fix, merge it to **`main**`, deploy the new version. This approach seems to favour
+projects with frequent deployments to a single target environment, which may not
+be a good fit for us.
+
 
 ## References
 The following books, articles, blogs were referenced in the creation of this content:
