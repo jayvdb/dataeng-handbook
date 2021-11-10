@@ -71,47 +71,50 @@
 </ul>
 </li>
 <li><a href="#approval-process">Approval Process</a></li>
-<li><a href="#versioning--tagging">Versioning &amp; Tagging</a></li>
+<li><a href="#merging">Merging</a></li>
+<li><a href="#versioning-tagging-and-deployment">Versioning, Tagging and Deployment</a></li>
+<li><a href="#hotfixes">Hotfixes</a></li>
 <li><a href="#references">References</a></li>
 </ul>
 <h2 id="introduction"><a class="toclink" href="#introduction">Introduction</a></h2>
-<p>The harrison.ai data engineering team uses <a href="https://git-scm.com/">git</a> for source control management and employs the git flow workflow; if you are not familiar or need a refresher on git flow, this explanation by Atlassian <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow</a> is a useful reference.</p>
-<p><img alt="branches.svg" src="../pages/branches.svg" /></p>
-<p>Almost all of our git repositories consist of the following branch types:</p>
+<p>The harrison.ai data engineering team uses <a href="https://git-scm.com/">git</a> for source control management,
+employing a trunk-based development workflow and pull-requests for code review in a style similar
+to <a href="https://guides.github.com/introduction/flow/">the GitHub recommended flow</a>.</p>
+<p>Key aspects of the workflow include:</p>
 <ul>
-<li><strong>main</strong>: is the production release branch that contains the code operating within the production environment.  With the exception of <strong>hotfixes</strong>, code can only reach the <strong>main</strong> branch following a pull request and by merging in from the <strong>develop</strong> or in some circumstances a <strong>release</strong> branch.</li>
-<li><strong>develop</strong>: is the deployment branch for the development environment.  The develop branch is used as a means of testing patches and features intended for release into the <strong>main</strong> branch.</li>
-<li><strong>feature</strong>: a branch created from <strong>develop</strong> that is used to develop and add new features to the code base.</li>
-<li><strong>bugfix</strong>: a branch created from <strong>develop</strong> that is used to implement fixes to reported issues. </li>
-<li><strong>hotfix</strong>: hotfix branches created from the <strong>master</strong> branch are used for fixes that must be quickly applied to production code.  Once these branches are merged into master, a merge from <strong>master</strong> into <strong>develop</strong> is also required.</li>
+<li>The <strong><code>main</code></strong> branch is always ready for release or deploy; any code that lands on <strong><code>main</code></strong> has
+  already been reviewed, tested and documented to our high quality standards.</li>
+<li>Releases and deploys are triggered by creating git tags from <strong><code>main</code></strong>, and are managed by
+  our CI/CD infrastructure. Tags follow semantics versioning.</li>
+<li>Work is performed in short-lived feature branches and submitted via pull request, which
+  must receive an approving review before being merged to <strong><code>main</code></strong>. Branch naming conventions
+  help us use automated tools to organize our work.</li>
 </ul>
-<p>Currently the data engineering team does not employ a dedicated <strong>release</strong> branch, due to the size of the team working on the code base and the desire for fast feedback cycles with production. </p>
 <h2 id="branching-workflow"><a class="toclink" href="#branching-workflow">Branching Workflow</a></h2>
-<p>When working on a development task, the first step is to create an appropriate branch within the correct code repository.  To ensure <strong>the newly created branch is up to date</strong> it is recommended that the branch
-be created from the interface of the central repository e.e. github.  If you are creating the branch from a local version of the repo, you must <strong>ensure you fetch the latest updates first</strong>.  Whichever method is used, ensure you
-are branching from <strong>develop</strong> with the exception of <strong>hotfix</strong> braanches which are created from <strong>main</strong>.</p>
-<p>The following naming convention is to be used when creating new branches:</p>
+<p>When working on a development task, the first step is to create an appropriate branch within the correct code repository.  To <strong>ensure the newly created branch is up to date</strong> it is recommended that the branch
+be created from the interface of the central repository e.g. github.  If you are creating the branch from a local version of the repo, you must <strong>ensure you fetch the latest updates first</strong>.</p>
+<p>The following naming convention is used when creating new branches:</p>
 <blockquote>
-<p><strong>BRANCH TYPE/TASK REFERENCE</strong></p>
+<p><strong><code>[BRANCH TYPE]/[TASK REFERENCE]-[OPTIONAL DESCRIPTION]</code></strong></p>
 </blockquote>
-<p>where <strong>BRANCH TYPE</strong> is one of:</p>
+<p>where <strong><code>[BRANCH TYPE]</code></strong> is one of:</p>
 <ul>
 <li>feature</li>
-<li>bugfix</li>
-<li>hotfix</li>
+<li>fix</li>
+<li>chore</li>
 </ul>
-<p>and the <strong>TASK REFERENCE</strong> is the task or ticket number created from Jira.</p>
+<p>and the <strong><code>[TASK REFERENCE]</code></strong> is the task or ticket number created from Jira.</p>
 <p>Examples:</p>
-<blockquote>
-<p>feature/PRO-123</p>
-<p>bugfix/FOO-1024</p>
-<p>hotfix/BAR-785</p>
-</blockquote>
+<ul>
+<li><code>feature/PRO-123</code></li>
+<li><code>fix/FOO-1024-validation-bug</code></li>
+<li><code>chore/BAR-785-update-barification-docs</code></li>
+</ul>
 <p>The intent behind this naming convention is that when looking at pull requests or a list of branches for a repository their context can be easily determined by the branch type and more detailed information such as 
 the definition of done can be obtained by referring to the corresponding Jira ticket.  This is particularly useful for reviewers of pull requests to ensure the branch meets the requirements of the definition of done.
-If setup correctly, Jira will also automatically update the status of the branch within the ticket itself, indicating if a PR (pull request) has been created or even merged.Once you have committed your patch to the branch a pull request is then created, to merge the patch into the original source branch with the name of the branch in the title.</p>
+If setup correctly, Jira will also automatically update the status of the branch within the ticket itself, indicating if a PR (pull request) has been created or even merged. Once you have committed your patch to the branch a pull request is then created, to merge the patch into the original source branch with the name of the branch in the title.</p>
 <h2 id="commit-messages"><a class="toclink" href="#commit-messages">Commit Messages</a></h2>
-<p>Writing clear and meaningful commit messages are a particularly important part of the development process, as they form both a record of the work that has been completed that can be used for later reference, help in communicating with readers or reviewers of your code as well as help to structure the work itself.  By establishing a common commit message format, reading pull requests and commit logs will become a lot easier and more straight forward.  </p>
+<p>Writing clear and meaningful commit messages is a particularly important part of the development process, as they form both a record of the work that has been completed that can be used for later reference, help in communicating with readers or reviewers of your code as well as help to structure the work itself.  By establishing a common commit message format, reading pull requests and commit logs will become a lot easier and more straight forward.  </p>
 <h3 id="anatomy-of-a-git-commit"><a class="toclink" href="#anatomy-of-a-git-commit">Anatomy of a Git Commit</a></h3>
 <p>The anatomy of a git commit message used within the data engineering team is as follows:</p>
 <pre><code class="language-markdown">type: Sentence case summary (max 50 chars) #JIRA-123
@@ -127,7 +130,7 @@ A bullet point list
 <p>The key features of the anatomy above are:</p>
 <ul>
 <li>
-<p>The JIRA (or Github) ticket reference.  This is used to ensure the commit is linked to the corresponding ticket and the current status of the task is automatically updated.</p>
+<p>The JIRA (or GitHub) ticket reference.  This is used to ensure the commit is linked to the corresponding ticket and the current status of the task is automatically updated.</p>
 </li>
 <li>
 <p>The type of the commit:</p>
@@ -168,7 +171,7 @@ compatibility with downstream microservices.
 <p>While this seems like a lot to think about for a simple commit message, getting into the habit of writing good commit messages will pay dividends later.</p>
 <p>💡 <strong>TIP</strong> Tools such as <a href="https://commitizen-tools.github.io/commitizen/">commitzen</a> can make creating commit messages a lot easier and in the future this may become a part of our standard toolkit.</p>
 <h2 id="pull-requests"><a class="toclink" href="#pull-requests">Pull Requests</a></h2>
-<p>As good commit messages help to communicate the additional context as to how and why changes were made to a code base, Pull Requests (PRs) also form an important part of this process.  PRs are a key part of developing quality software as they provide a means of:</p>
+<p>Just as good commit messages help to communicate the additional context as to how and why changes were made to a codebase, Pull Requests (PRs) also form an important part of this process.  PRs are a key part of developing quality software as they provide a means of:</p>
 <ul>
 <li>ensuring the committed code achieves the desired result</li>
 <li>checking that additional bugs or security vulnerabilities are not introduced to the code base</li>
@@ -308,9 +311,49 @@ docs: Update API documentation for json export # JIRA-123
 
 </code></pre>
 <h2 id="approval-process"><a class="toclink" href="#approval-process">Approval Process</a></h2>
-<p>In order to merge a branch into either <em>develop</em> or <em>master</em> a pull request must be approved by at least one, preferably two subject matter experts.  These constraints are to be configured at the repository level to ensure a merge cannot be committed without appropriate approval.  The review process, while checking the code satisfies the requirements of the ticket should also ensure that the code adheres to any relevant style guides, as well as the various formatting described within this page.  When executing the merge the commits should be squashed for readability.</p>
-<h2 id="versioning-tagging"><a class="toclink" href="#versioning-tagging">Versioning &amp; Tagging</a></h2>
-<p>🚧 Coming Soon</p>
+<p>In order to merge a branch into <strong><code>main</code></strong> a pull request must be approved by at least one, preferably two component owners.  These constraints are to be configured at the repository level to ensure a merge cannot be committed without appropriate approval.  The review process, while checking the code satisfies the requirements of the ticket should also ensure that the code adheres to any relevant style guides, as well as the various formatting described within this page.</p>
+<h2 id="merging"><a class="toclink" href="#merging">Merging</a></h2>
+<p>When a PR has received the necessary approvals, the submitter merges it to
+the <strong><code>main</code></strong> branch.</p>
+<p>GitHub's "squash and merge" feature is the preferred merge mechanism, as it 
+combines any fixes from review comments into a single commit and automatically
+includes a references to the PR number. When multiple commits are being squashed,
+take a few moments to edit the final commit message to reflect the "good commit
+guidelines" above, and ensure that it contains a refernces to the corresponding
+Jira ticket if any.</p>
+<p>Merge commits are discouraged, and should only be created when we expect to merge
+multiple times from the same branch (such as when merging changes from a public
+repository into a private fork).</p>
+<h2 id="versioning-tagging-and-deployment"><a class="toclink" href="#versioning-tagging-and-deployment">Versioning, Tagging and Deployment</a></h2>
+<p>To make code available for deployment or consumption by other services,
+we make a new git tag from the <strong><code>main</code></strong> branch. Tags follow the format
+and semantics of <a href="https://semver.org/">Semantic Version 2.0.0</a>
+(although the exact details of what constitutes the versioned API surface
+may vary between repositories).</p>
+<p>Cutting a new tag automatically triggers our CI/CD system to begin a deployment
+to production, as appropriate for the repo.</p>
+<h2 id="hotfixes"><a class="toclink" href="#hotfixes">Hotfixes</a></h2>
+<p>We aim to avoid hotfix deployments s much as possible. The preferred way to get
+both fixes and features into production is via an ordinary release from latest
+<strong><code>main</code></strong>.</p>
+<p>However, since we may have different consumers running different versions of our
+software in their own production environments, it could be necessary to deploy
+a hotfix based on some earlier tagged version of the code rather than on latest
+<strong><code>main</code></strong>.</p>
+<p>If needed, we create hotfix releases by working on a separate release branch
+as follows:</p>
+<ul>
+<li>If one does not already exist, create a new branch named <code>release-X.Y</code> based
+  an existing <code>X.Y.Z</code> release tag.</li>
+<li>Develop the fix as a PR to the <code>release-X.Y</code> branch, following the processes
+  above.</li>
+<li>Tag a new release <code>X.Y.(Z+1)</code> from the <code>release-X.Y</code> branch, which will be
+  picked up by our CI/CD system to begin a deployment to production.</li>
+</ul>
+<p>Trunk-based workflows seem to favour treating these like any other PR - make the
+fix, merge it to **<code>main**</code>, deploy the new version. This approach seems to favour
+projects with frequent deployments to a single target environment, which may not
+be a good fit for us.</p>
 <h2 id="references"><a class="toclink" href="#references">References</a></h2>
 <p>The following books, articles, blogs were referenced in the creation of this content:</p>
 <ul>
