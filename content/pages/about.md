@@ -21,5 +21,5 @@ The [harrison.ai](https://www.harrison.ai) data engineering team is currently co
 |     [Oliver Daff](https://github.com/oliverdaff)     |  Senior Software Engineer  |
 |         [Ryan Kelly](https://github.com/rfk)         |  Senior Software Engineer  |
 |      [Tim Leslie](https://github.com/timleslie)      |  Senior Software Engineer  |
-|                     *Now Hiring*                     | Senior Solutions Architect |
+|      [Issa Moussa](https://github.com/comozo)        | Senior Solutions Architect |
 |                     *Now Hiring*                     | Senior Solutions Architect |
