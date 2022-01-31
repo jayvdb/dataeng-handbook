@@ -49,27 +49,32 @@ def get_toc(hmap, toc, site_url):
         if k not in hmap:
             continue
 
-        v = hmap[k]
+        # Skip drafts
+        pages = list(p for p in hmap[k] if "url" in p)
 
-        for page in v:
+        if len(pages) == 0:
+            continue
 
-            # Skip drafts
-            if 'url' not in page:
-                continue
+        if pages[0]['filename'] != 'index.md':
+            print("WARNING: the first file in a category must be `index.md`, otherwise we will generate garbage HTML.")
+            print(f"Category {repr(k)} has files {list(p['filename'] for p in pages)}")
+            print("Cowardly refusing to include it in the ToC.")
+            continue
+
+        for page in pages:
 
             if page['filename'] == 'index.md':
-                msg = f"<a href=\"https://{site_url}/{page['url']}\" "
+                msg = f"<a href=\"{site_url}/{page['url']}\" "
                 msg += "data-toggle=\"collapse\" aria-expanded=\"false\" class=\"dropdown-toggle\""
                 msg += f">{page['category']}</a>"
                 msg += f"<ul class=\"list-unstyled\" id=\"{page['title'].replace(' ', '')}\">"
                 toc.append(msg)
 
             else:
-                msg = f"<li><a href=\"https://{site_url}/{page['url']}\">{page['title']}</a></li>"
+                msg = f"<li><a href=\"{site_url}/{page['url']}\">{page['title']}</a></li>"
                 toc.append(msg)
 
         toc.append('</ul>')
-    toc.append('</ul>')
 
 
 def gen_toc(page_generator):

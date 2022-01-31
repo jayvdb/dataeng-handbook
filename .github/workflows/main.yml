@@ -27,7 +27,7 @@ jobs:
       - name: Build the site
         run: make publish
         env:
-          SITEURL: ${{ secrets.SITEURL }}
+          SITEURL: https://${{ secrets.SITEURL }}
 
       - name: Export to gh-pages
         run: ghp-import output -b gh-pages
