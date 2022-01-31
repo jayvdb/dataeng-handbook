@@ -1,0 +1,26 @@
+name: Test that the site builds successfully
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    environment: github-pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+
+      - name: Install requirements
+        run: pip install -r requirements.txt
+
+      - name: Build the site
+        run: make publish
+        env:
+          SITEURL: ${{ secrets.SITEURL }}
