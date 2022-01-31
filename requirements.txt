@@ -2,7 +2,7 @@ astroid==2.7.3
 blinker==1.4
 docutils==0.17.1
 feedgenerator==1.9.2
-ghp-import==2.0.1
+ghp-import==2.0.2
 isort==5.9.3
 Jinja2==3.0.1
 lazy-object-proxy==1.6.0
