@@ -9,7 +9,7 @@ lazy-object-proxy==1.6.0
 Markdown==3.3.4
 MarkupSafe==2.0.1
 mccabe==0.6.1
-pelican==4.6.0
+pelican==4.7.1
 platformdirs==2.4.1
 Pygments==2.11.2
 pylint==2.10.2
