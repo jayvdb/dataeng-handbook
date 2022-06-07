@@ -23,4 +23,4 @@ The [harrison.ai](https://www.harrison.ai) data engineering team is currently co
 |      [Tim Leslie](https://github.com/timleslie)      |  Senior Software Engineer  |
 |      [Issa Moussa](https://github.com/comozo)        | Senior Solutions Architect |
 |    [William Croxson](https://github.com/peasee)      |      Software Engineer     |
-|                     *Now Hiring*                     | Senior Solutions Architect |
+|   [Daniel Carrion](https://github.com/dcarrion87)    | Senior Solutions Architect |
