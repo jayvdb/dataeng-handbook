@@ -12,15 +12,16 @@ The [harrison.ai](https://www.harrison.ai) data engineering team is currently co
 
 ## The Team
 
-|                         Name                         |            Role            |
-| :--------------------------------------------------: | :------------------------: |
-|    [Ben Johnston](https://github.com/doc-E-brown)    |  Head of Data Engineering  |
-|     [Shaun Roos](https://github.com/shaunroos78)     |      Delivery Manager      |
-|    [Carl Hattingh](https://github.com/schattingh)    |  Lead Solutions Architect  |
-| [Warren MacDougall](https://github.com/wgmacdougall) | Senior Solutions Architect |
-|     [Oliver Daff](https://github.com/oliverdaff)     |  Senior Software Engineer  |
-|         [Ryan Kelly](https://github.com/rfk)         |  Senior Software Engineer  |
-|      [Tim Leslie](https://github.com/timleslie)      |  Senior Software Engineer  |
-|      [Issa Moussa](https://github.com/comozo)        | Senior Solutions Architect |
-|    [William Croxson](https://github.com/peasee)      |      Software Engineer     |
-|   [Daniel Carrion](https://github.com/dcarrion87)    | Senior Solutions Architect |
+|                            Name                            |            Role            |
+|:----------------------------------------------------------:| :------------------------: |
+|       [Ben Johnston](https://github.com/doc-E-brown)       |  Head of Data Engineering  |
+|        [Shaun Roos](https://github.com/shaunroos78)        |      Delivery Manager      |
+|       [Carl Hattingh](https://github.com/schattingh)       |  Lead Solutions Architect  |
+|    [Warren MacDougall](https://github.com/wgmacdougall)    | Senior Solutions Architect |
+|        [Oliver Daff](https://github.com/oliverdaff)        |  Senior Software Engineer  |
+|            [Ryan Kelly](https://github.com/rfk)            |  Senior Software Engineer  |
+|         [Tim Leslie](https://github.com/timleslie)         |  Senior Software Engineer  |
+|          [Issa Moussa](https://github.com/comozo)          | Senior Solutions Architect |
+|        [William Croxson](https://github.com/peasee)        |      Software Engineer     |
+|      [Daniel Carrion](https://github.com/dcarrion87)       | Senior Solutions Architect |
+|     [Tanya Srinidhi](https://github.com/TanyaSrinidhi)     |      Software Engineer     |
