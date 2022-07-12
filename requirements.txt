@@ -1,4 +1,4 @@
-astroid==2.11.4
+astroid==2.12.2
 blinker==1.4
 docutils==0.18.1
 feedgenerator==2.0.0
