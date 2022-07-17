@@ -1,5 +1,5 @@
 astroid==2.11.4
-blinker==1.4
+blinker==1.5
 docutils==0.18.1
 feedgenerator==2.0.0
 ghp-import==2.1.0
